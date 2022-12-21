@@ -1,9 +1,9 @@
 :root {
-    --light-shade: yellow;
-    --light-accent: blue;
-    --brand-color: green;
-    --dark-shade: red;
-    --dark-accent: brown;
+    --light-shade: #F5F5EB;
+    --light-accent: #BAA1AA;
+    --brand-color: #EC959D;
+    --dark-shade: #C83951;
+    --dark-accent: #45334B;
 }
 
 * {
@@ -12,13 +12,17 @@
     font-family: "Quicksand", sans-serif;
 }
 
+body {
+    background-color: var(--light-shade);
+}
+
 .LogoAndUser {
     display: flex;
     justify-content: space-between;
 }
 
 .Nav {
-    background-color: purple;
+    background-color: var(--dark-shade);
     top: 0;
     position: sticky;
 }
@@ -26,18 +30,27 @@
     display: flex;
     list-style-type: none;
     justify-content: space-around;
+    align-items: center;
 }
 .Nav ul li {
-    padding: 0 10px;
+    /* padding: 0 10px; */
     flex-grow: 1;
     border-left: 2px solid var(--brand-color);
     text-align: center;
 }
+
 .Nav ul li:first-child {
     border-left: none;
 }
 .Nav ul li:hover {
-    background-color: orange;
+    background-color: var(--brand-color)
+}
+
+.Nav ul li a {
+    display: block;
+    font-weight: bold;
+    color: var(--light-shade);
+    text-decoration: none;
 }
 
 .Playlists ul {
@@ -50,18 +63,18 @@
 }
 
 .Playlists ul li {
-    background-color: blue;
+    background-color: var(--light-accent);
 }
 
 .Playlists ul li img {
     width: 100%;
-    height: 100px;
+    height: 120px;
     object-fit: cover;
     justify-self: center;
 }
 
 .Playlists ul li a {
-    text-shadow: 1px 1px 1px hotpink;
+    text-shadow: 1px 1px 1px var(--brand-color);
     text-decoration: none;
     /* filter: hue-rotate(300deg); */
 }
@@ -75,10 +88,41 @@
     display: inline-block;
 }
 
+.Footer {
+    background-color: var(--dark-shade);
+    color: var(--light-shade);
+}
+
+.Footer a {
+    font-weight: bold;
+    color: var(--light-shade);
+}
+
+/* component padding and margins */
+
+.Playlists, .LogoAndUser {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Playlists ul li .playlist-info, .Nav ul li a, .Footer {
+    padding: 10px;
+}
+
+@media only screen and (min-width: 400px) {
+    /* This is only applicable for playlist thumbnail */
+    .Playlists ul li img {
+        height: 150px;
+    }
+}
+
 @media only screen and (min-width: 520px) {
     /* This is only applicable for playlist thumbnail */
     .Playlists ul {
         grid-template-columns: repeat(auto-fill, 45%);
+    }
+    .Playlists ul li img {
+        height: 120px;
     }
 }
 
@@ -87,11 +131,17 @@
     .Playlists ul {
         grid-template-columns: repeat(auto-fill, 30%);
     }
+    .Playlists ul li img {
+        height: 150px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     /* This is only applicable for playlist thumbnail */
     .Playlists ul {
         grid-template-columns: repeat(auto-fill, 24%);
+    }
+    .Playlists ul li img {
+        height: 200px;
     }
 }
