@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Playlists from "./components/Playlists";
 import LogoAndUser from "./components/LogoAndUser";
 import Nav from "./components/Nav";
+import Home from "./components/Home";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <LogoAndUser />
             <Nav />
             <Routes>
+                <Route path="/" element={<Home />}></Route>
                 <Route path="/playlists" element={<Playlists />}></Route>
             </Routes>
             <Footer />
