@@ -6,8 +6,8 @@ const apiConnection = axios.create({
 
 export const getPlaylists = () => {
     return apiConnection
-    .get("/", {}) // SHOULD BE /playlists amend in backend
+    .get("/playlists", {}) 
     .then((res) => {
-        return res.data
+        return res.data.playlists
     })
 }
