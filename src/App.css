@@ -1,9 +1,9 @@
 :root {
-    --light-shade: #F5F5EB;
-    --light-accent: #BAA1AA;
-    --brand-color: #EC959D;
-    --dark-shade: #C83951;
-    --dark-accent: #45334B;
+    --light-shade: #f5f5eb;
+    --light-accent: #baa1aa;
+    --brand-color: #ec959d;
+    --dark-shade: #c83951;
+    --dark-accent: #45334b;
 }
 
 * {
@@ -43,7 +43,7 @@ body {
     border-left: none;
 }
 .Nav ul li:hover {
-    background-color: var(--brand-color)
+    background-color: var(--brand-color);
 }
 
 .Nav ul li a {
@@ -51,6 +51,21 @@ body {
     font-weight: bold;
     color: var(--light-shade);
     text-decoration: none;
+}
+
+.Home .welcome {
+    height: 300px;
+    background-image: url("./images/salad-g1d41f2c01_1280.jpg");
+    background-size: cover;
+}
+.Home .welcome section {
+    background-color: rgba(245, 245, 235, 0.6);
+    text-align: center;
+    padding: 10px;
+}
+.Home .welcome section > p {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .Playlists ul {
@@ -100,12 +115,15 @@ body {
 
 /* component padding and margins */
 
-.Playlists, .LogoAndUser {
+.Playlists,
+.LogoAndUser {
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.Playlists ul li .playlist-info, .Nav ul li a, .Footer {
+.Playlists ul li .playlist-info,
+.Nav ul li a,
+.Footer {
     padding: 10px;
 }
 
