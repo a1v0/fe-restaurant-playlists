@@ -70,7 +70,11 @@ function Playlist() {
                 src={getCuisineImg(playlist[0].cuisine)}
                 className="cuisine-img"
             />
-            {playlist[0].description ? <p>{playlist[0].description}</p> : null}
+            {playlist[0].description ? (
+                <p className="playlist-description">
+                    {playlist[0].description}
+                </p>
+            ) : null}
             <ul>
                 {restaurantDetails.map((restaurant) => {
                     return (

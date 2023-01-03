@@ -87,11 +87,21 @@ body {
     display: inline-block;
 }
 
+.Playlist {
+    margin: 10px 0;
+}
 .Playlist .playlist-details {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     color: var(--dark-accent);
+}
+.Playlist .playlist-description {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--light-shade);
+    background-color: var(--dark-accent);
 }
 .Playlist ul {
     background-color: var(--light-accent);
@@ -130,7 +140,9 @@ body {
 .Playlist .cuisine-img {
     object-fit: cover;
     width: 100%;
+    height: 150px;
     margin-top: 10px;
+    display: block;
 }
 .Playlist h3 > a {
     float: right;
@@ -189,6 +201,34 @@ body {
     }
     .Playlists ul li img {
         height: 150px;
+    }
+
+    .Playlist {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .Playlist .cuisine-img {
+        display: none;
+    }
+    .Playlist .playlist-description {
+        margin-top: 10px;
+        padding: 15px;
+    }
+    .Playlist ul li {
+        display: flex;
+    }
+    .Playlist ul li .restaurant-image {
+        border: 2px solid var(--dark-accent);
+        border-right: none;
+        width: 250px;
+        border-radius: 10px 0 0 10px;
+    }
+    .Playlist ul li .restaurant-details {
+        border: 2px solid var(--dark-accent);
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+        flex-grow: 1;
     }
 }
 
