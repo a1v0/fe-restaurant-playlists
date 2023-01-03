@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
@@ -16,6 +17,19 @@ export default function Home() {
                         restaurants.
                     </p>
                 </section>
+            </div>
+            <div className="get-started">
+                <h2>Get Started</h2>
+                <p>
+                    <strong>I want to...</strong>
+                </p>
+                <ul>
+                    <li>
+                        <Link to="/playlists">Browse</Link>
+                    </li>
+                    <li>Create an account</li>
+                    <li>Select a random playlist</li>
+                </ul>
             </div>
         </main>
     );

@@ -61,11 +61,13 @@ body {
 .Home .welcome section {
     background-color: rgba(245, 245, 235, 0.6);
     text-align: center;
-    padding: 10px;
 }
 .Home .welcome section > p {
     margin-top: 10px;
     margin-bottom: 15px;
+}
+.Home .get-started ul {
+    margin-left: 25px;
 }
 
 .Playlists ul {
@@ -123,6 +125,8 @@ body {
 
 .Playlists ul li .playlist-info,
 .Nav ul li a,
+.Home .welcome section,
+.Home .get-started,
 .Footer {
     padding: 10px;
 }
