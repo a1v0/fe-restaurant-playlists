@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getPlaylistById } from "../api";
+import { getPlaylistById } from "../app-api";
 
 function Playlist() {
     const { playlist_id } = useParams();

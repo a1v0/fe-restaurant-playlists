@@ -7,7 +7,7 @@ import italian from "../images/cuisine/italian.jpg";
 import japanese from "../images/cuisine/japanese.jpg";
 import defaultCuisine from "../images/cuisine/defaultCuisine.jpg";
 import { Link } from "react-router-dom";
-import { getPlaylists } from "../api";
+import { getPlaylists } from "../app-api";
 
 function Playlists() {
     const [playlists, setPlaylists] = useState([]);
