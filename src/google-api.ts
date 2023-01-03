@@ -38,7 +38,7 @@ export function getPlaceDetails(placeId: string) {
                 service.getDetails(request, (place, status) => {
                     if (place === null) reject();
                     else {
-                        resolve(place);
+                        resolve({ ...place, placeId });
                     }
                 });
             });

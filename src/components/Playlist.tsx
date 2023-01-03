@@ -16,19 +16,33 @@ function Playlist() {
         }
     ]);
 
+    const [restaurantDetails, setRestaurantDetails] = useState([
+        {
+            name: "",
+            formatted_address: "",
+            photos: [],
+            url: "",
+            website: "",
+            placeId: ""
+        }
+    ]);
+
     useEffect(() => {
-        getPlaylistById(Number(playlist_id)).then((response) => {
-            setPlaylist(response);
-        });
+        getPlaylistById(Number(playlist_id))
+            .then((response) => {
+                setPlaylist(response);
+                const placeDetails = response.map(
+                    (restaurant: { place_id: string }) => {
+                        return getPlaceDetails(restaurant.place_id);
+                    }
+                );
+                return Promise.all(placeDetails);
+            })
+            .then((placeDetails) => {
+                setRestaurantDetails(placeDetails);
+            });
     }, [playlist_id]);
 
-    getPlaceDetails("ChIJN1t_tDeuEmsRUsoyG83frY4").then((placeDetails) => {
-        // console.log(placeDetails.photos[0].getUrl());
-        console.log(placeDetails);
-        // console.log(hello);
-        // console.log(hello.length);
-        // console.log(hello[0]);
-    });
     return (
         <main className="Playlist">
             <div id="map">
@@ -47,6 +61,9 @@ function Playlist() {
             <h1>Playlist Picture</h1>
             {playlist[0].description ? <p>{playlist[0].description}</p> : null}
             <ul>
+                {restaurantDetails.map((restaurant) => {
+                    return <li key={restaurant.placeId}>{restaurant.name}</li>;
+                })}
                 <li>
                     <h3>Restaurant Name</h3>
                     <p>Restaurant Address</p>
