@@ -88,6 +88,27 @@ body {
     display: inline-block;
 }
 
+.Playlist .playlist-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.8em;
+    color: var(--dark-accent);
+}
+
+.Playlist ul{
+    border: 1px red solid;
+    background-color: var(--light-accent);
+    padding: 10px;
+    list-style-type: none;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.Playlist ul li {
+    margin-bottom: 10px;
+}
+
 .Footer {
     background-color: var(--dark-shade);
     color: var(--light-shade);
@@ -100,7 +121,7 @@ body {
 
 /* component padding and margins */
 
-.Playlists, .LogoAndUser {
+.Playlists, .Playlist, .LogoAndUser {
     margin-left: 10px;
     margin-right: 10px;
 }
