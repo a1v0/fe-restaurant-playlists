@@ -28,10 +28,12 @@ function Playlists() {
                     }) => {
                         return (
                             <li key={playlist.playlist_id}>
-                                <img
-                                    src={getCuisineImg(playlist.cuisine)}
-                                    alt={`${playlist.cuisine} food`}
-                                />
+                                <Link to={`/playlists/${playlist.playlist_id}`}>
+                                    <img
+                                        src={getCuisineImg(playlist.cuisine)}
+                                        alt={`${playlist.cuisine} food`}
+                                    />
+                                </Link>
                                 <div className="playlist-info">
                                     <h2>
                                         <Link
@@ -81,7 +83,7 @@ function Playlists() {
                         );
                     }
                 )}
-                {/* {lines 100 - 127 to be deleted once happy with this page} */}
+                {/* *** TO DO *** {lines 100 - 127 to be deleted once happy with this page} */}
                 <li>
                     <img
                         src="https://res.cloudinary.com/tf-lab/image/upload/w_600,h_337,c_fill,q_auto,f_auto/restaurant/5792d411-5461-44fd-aec6-c284b82b81ad/9471e3a2-7790-48ca-896b-4161bc9bc002.jpg"

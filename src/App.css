@@ -74,13 +74,17 @@ body {
 }
 
 .Playlists ul li a {
+    color: var(--dark-accent);
+    text-decoration: none;
+    display: block;
+}
+
+.Playlists ul li .review-data a {
     text-shadow: 1px 1px 1px var(--brand-color);
     text-decoration: none;
-    /* filter: hue-rotate(300deg); */
+    display: inline;
 }
-.Playlists ul li a:hover {
-    /* text-shadow: 1px 1px 1px hotpink; */
-    /* text-decoration: none; */
+.Playlists ul li .review-data a:hover {
     filter: hue-rotate(250deg);
 }
 
