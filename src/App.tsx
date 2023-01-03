@@ -7,9 +7,14 @@ import LogoAndUser from "./components/LogoAndUser";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
 
 function App() {
-  console.log(Profile);
+  const [loggedInUser, setLoggedInUser] = useState({}) 
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log(user);
   return (
     <div className="App">
       <LogoAndUser />

@@ -12,7 +12,7 @@ export default function Home() {
       <button onClick={() => logout({ returnTo: window.location.origin })}>
         Log Out
       </button>
-      <Link to="/profile">Yo</Link>
+      <Link to="/profile"> User Profile </Link>
     </div>
   );
 }
