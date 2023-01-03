@@ -10,19 +10,16 @@ function Playlist() {
             owner_nickname: "",
             location: "",
             cuisine: "",
-            description: ""
+            description: "",
+            place_id: ""
         }
     ]);
-    //  cuisine: "thai", description: "lorem ipsum lorem ipsum", location: "manchester", … }
-    // place_id: "ChIJP8J3ZIVeeUgRlzmWlDEjXPc"
-    // playlist_id: 0
 
     useEffect(() => {
         getPlaylistById(Number(playlist_id)).then((response) => {
             setPlaylist(response);
         });
-    }, []);
-    console.log(playlist);
+    }, [playlist_id]);
 
     return (
         <main className="Playlist">
@@ -30,10 +27,12 @@ function Playlist() {
             <div className="playlist-details">
                 <p>{playlist[0].owner_nickname}</p>
                 <p>
-                    {playlist[0].location ? "#" + playlist[0].location : null}{" "}
+                    {playlist[0].location ? "#" + playlist[0].location : null}
+                    {playlist[0].location && playlist[0].cuisine ? " " : null}
                     {playlist[0].cuisine ? "#" + playlist[0].cuisine : null}
                 </p>
             </div>
+            {/* ***TO DO*** add playlist picture based on cuisine, like on Playlists component */}
             <h1>Playlist Picture</h1>
             {playlist[0].description ? <p>{playlist[0].description}</p> : null}
             <ul>
