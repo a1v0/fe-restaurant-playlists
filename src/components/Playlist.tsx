@@ -57,14 +57,19 @@ function Playlist() {
             </div>
             <h2>{playlist[0].name}</h2>
             <div className="playlist-details">
-                <p>{playlist[0].owner_nickname}</p>
+                <p>
+                    by <strong>{playlist[0].owner_nickname}</strong>
+                </p>
                 <p>
                     {playlist[0].location ? "#" + playlist[0].location : null}
                     {playlist[0].location && playlist[0].cuisine ? " " : null}
                     {playlist[0].cuisine ? "#" + playlist[0].cuisine : null}
                 </p>
             </div>
-            <img src={getCuisineImg(playlist[0].cuisine)} />
+            <img
+                src={getCuisineImg(playlist[0].cuisine)}
+                className="cuisine-img"
+            />
             {playlist[0].description ? <p>{playlist[0].description}</p> : null}
             <ul>
                 {restaurantDetails.map((restaurant) => {
@@ -75,14 +80,18 @@ function Playlist() {
                                 className="restaurant-image"
                                 alt={restaurant.name}
                             />
-                            <h3>{restaurant.name}</h3>
-                            <p>
-                                {restaurant.formatted_address} (
-                                <a href={restaurant.website} target="_blank">
-                                    website
-                                </a>
-                                )
-                            </p>
+                            <div className="restaurant-details">
+                                <h3>
+                                    {restaurant.name}
+                                    <a
+                                        href={restaurant.website}
+                                        target="_blank"
+                                    >
+                                        (view website)
+                                    </a>
+                                </h3>
+                                <p>{restaurant.formatted_address}</p>
+                            </div>
                         </li>
                     );
                 })}
