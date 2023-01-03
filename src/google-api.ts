@@ -7,28 +7,78 @@ const loader = new Loader({
     libraries: ["places"]
 });
 
-export const getPlaceDetails = (placeId: string): void => {
-    loader.load().then(() => {
-        const map = new google.maps.Map(
-            document.getElementById("map") as HTMLElement
-        );
-        const request = {
-            placeId,
-            fields: [
-                "name",
-                "formatted_address",
-                "photo",
-                "url",
-                "website"
-                // opening_hours, photos (possibly photo is wrong)
-                // price_level, rating, reviews are useful but more expensive fields
-                // *** TO DO *** add a subtle link to "url" field, because Google requests this
-            ]
-        };
-        const service = new google.maps.places.PlacesService(map);
+export function getPlaceDetails(placeId: string) {
+    // const placeData: any[] = [];
+    return new Promise((resolve, reject) => {
+        return loader.load().then(() => {
+            const map = new google.maps.Map(
+                document.getElementById("map") as HTMLElement
+            );
+            const request = {
+                placeId,
+                fields: [
+                    "name",
+                    "formatted_address",
+                    "photo",
+                    "url",
+                    "website"
+                    // opening_hours, photos (possibly photo is wrong)
+                    // price_level, rating, reviews are useful but more expensive fields
+                    // *** TO DO *** add a subtle link to "url" field, because Google requests this
+                ]
+            };
+            const service = new google.maps.places.PlacesService(map);
 
-        service.getDetails(request, (place, status) => {
-            console.log(place);
+            return service.getDetails(request, (place, status) => {
+                // placeData.push(place);
+                // console.log(placeData, "placeData");
+                // console.log(placeData.length);
+                // console.log(placeData[0]);
+                resolve(place);
+            });
+
+            // service.getDetails(
+            //     {
+            //         placeId,
+            //         fields: ["photos"]
+            //     },
+            //     (place,status) => {
+            //         resolve(place);
+            //     }
+            // );
         });
     });
-};
+}
+
+//     service.getDetails(request, (place, status) => {
+//         placeData.push(place);
+//         console.log(placeData, "placeData");
+//         console.log(placeData.length);
+//         console.log(placeData[0]);
+//         return placeData;
+//     });
+//     // check if there's a promise version of getDetails
+//     // if not, refactor function so whole thing uses callbacks
+
+//     // return placeData;
+// });
+//
+//
+//
+//
+//
+// const getPlaceDetails = (placeId) => {
+// return new Promise((resolve, reject) => {
+//     let placesService = new window.google.maps.places.PlacesService(
+//         placeId
+//     );
+//     placesService.getDetails(
+//         {
+//             placeId,
+//             fields: ["photos"]
+//         },
+//         (place,status) => {
+//             resolve(place);
+//         }
+//     );
+// });

@@ -21,7 +21,14 @@ function Playlist() {
             setPlaylist(response);
         });
     }, [playlist_id]);
-    getPlaceDetails();
+
+    getPlaceDetails("ChIJN1t_tDeuEmsRUsoyG83frY4").then((placeDetails) => {
+        // console.log(placeDetails.photos[0].getUrl());
+        console.log(placeDetails);
+        // console.log(hello);
+        // console.log(hello.length);
+        // console.log(hello[0]);
+    });
     return (
         <main className="Playlist">
             <div id="map">
