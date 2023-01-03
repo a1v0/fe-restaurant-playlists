@@ -64,8 +64,6 @@ function Playlist() {
                     {playlist[0].cuisine ? "#" + playlist[0].cuisine : null}
                 </p>
             </div>
-            {/* ***TO DO*** add playlist picture based on cuisine, like on Playlists component */}
-            <h1>Playlist Picture</h1>
             <img src={getCuisineImg(playlist[0].cuisine)} />
             {playlist[0].description ? <p>{playlist[0].description}</p> : null}
             <ul>
