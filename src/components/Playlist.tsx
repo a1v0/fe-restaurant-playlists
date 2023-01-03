@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getPlaylistById } from "../app-api";
+import { getPlaceDetails } from "../google-api";
 
 function Playlist() {
     const { playlist_id } = useParams();
@@ -20,9 +21,12 @@ function Playlist() {
             setPlaylist(response);
         });
     }, [playlist_id]);
-
+    getPlaceDetails();
     return (
         <main className="Playlist">
+            <div id="map">
+                {/* This element, while empty, needs to be there for the Google API requests to work */}
+            </div>
             <h2>{playlist[0].name}</h2>
             <div className="playlist-details">
                 <p>{playlist[0].owner_nickname}</p>
