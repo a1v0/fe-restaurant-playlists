@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
-import american from "../images/cuisine/american.jpg";
-import chinese from "../images/cuisine/chinese.jpg";
-import french from "../images/cuisine/french.jpg";
-import indian from "../images/cuisine/indian.jpg";
-import italian from "../images/cuisine/italian.jpg";
-import japanese from "../images/cuisine/japanese.jpg";
-import defaultCuisine from "../images/cuisine/defaultCuisine.jpg";
 import { Link } from "react-router-dom";
 import { getPlaylists } from "../app-api";
+import { getCuisineImg } from "../utils";
 
 function Playlists() {
     const [playlists, setPlaylists] = useState([]);
@@ -32,34 +26,10 @@ function Playlists() {
                         total_votes: number;
                         nickname: string;
                     }) => {
-                        let imgSrc;
-                        switch (playlist.cuisine) {
-                            case "american":
-                                imgSrc = american;
-                                break;
-                            case "chinese":
-                                imgSrc = chinese;
-                                break;
-                            case "french":
-                                imgSrc = french;
-                                break;
-                            case "indian":
-                                imgSrc = indian;
-                                break;
-                            case "italian":
-                                imgSrc = italian;
-                                break;
-                            case "japanese":
-                                imgSrc = japanese;
-                                break;
-                            default:
-                                imgSrc = defaultCuisine;
-                                break;
-                        }
                         return (
                             <li key={playlist.playlist_id}>
                                 <img
-                                    src={imgSrc}
+                                    src={getCuisineImg(playlist.cuisine)}
                                     alt={`${playlist.cuisine} food`}
                                 />
                                 <div className="playlist-info">
