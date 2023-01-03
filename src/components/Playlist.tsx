@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getPlaylistById } from "../app-api";
 import { getPlaceDetails } from "../google-api";
+import { getCuisineImg } from "../utils";
 
 function Playlist() {
     const { playlist_id } = useParams();
@@ -20,7 +21,7 @@ function Playlist() {
         {
             name: "",
             formatted_address: "",
-            photos: [],
+            photoUrl: "",
             url: "",
             website: "",
             placeId: ""
@@ -39,7 +40,13 @@ function Playlist() {
                 return Promise.all(placeDetails);
             })
             .then((placeDetails) => {
-                setRestaurantDetails(placeDetails);
+                const placeDetailsWithPhotoUrls = placeDetails.map((place) => {
+                    const photoUrl = place.photos[0].getUrl();
+                    place.photoUrl = photoUrl;
+                    delete place.photos;
+                    return place;
+                });
+                setRestaurantDetails(placeDetailsWithPhotoUrls);
             });
     }, [playlist_id]);
 
@@ -59,27 +66,28 @@ function Playlist() {
             </div>
             {/* ***TO DO*** add playlist picture based on cuisine, like on Playlists component */}
             <h1>Playlist Picture</h1>
+            <img src={getCuisineImg(playlist[0].cuisine)} />
             {playlist[0].description ? <p>{playlist[0].description}</p> : null}
             <ul>
                 {restaurantDetails.map((restaurant) => {
-                    return <li key={restaurant.placeId}>{restaurant.name}</li>;
+                    return (
+                        <li key={restaurant.placeId}>
+                            <img
+                                src={restaurant.photoUrl}
+                                className="restaurant-image"
+                                alt={restaurant.name}
+                            />
+                            <h3>{restaurant.name}</h3>
+                            <p>
+                                {restaurant.formatted_address} (
+                                <a href={restaurant.website} target="_blank">
+                                    website
+                                </a>
+                                )
+                            </p>
+                        </li>
+                    );
                 })}
-                <li>
-                    <h3>Restaurant Name</h3>
-                    <p>Restaurant Address</p>
-                </li>
-                <li>
-                    <h3>Restaurant Name</h3>
-                    <p>Restaurant Address</p>
-                </li>
-                <li>
-                    <h3>Restaurant Name</h3>
-                    <p>Restaurant Address</p>
-                </li>
-                <li>
-                    <h3>Restaurant Name</h3>
-                    <p>Restaurant Address</p>
-                </li>
             </ul>
         </main>
     );
