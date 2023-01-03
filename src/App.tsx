@@ -16,7 +16,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/playlists" element={<Playlists />}></Route>
-                <Route path = "/playlists/:playlist_id" element={<Playlist />}></Route>
+                <Route
+                    path="/playlists/:playlist_id"
+                    element={<Playlist />}
+                ></Route>
             </Routes>
             <Footer />
         </div>
