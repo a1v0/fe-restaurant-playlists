@@ -17,6 +17,12 @@ body {
     background-color: var(--light-shade);
 }
 
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .LogoAndUser {
     display: flex;
     justify-content: space-between;
@@ -34,7 +40,6 @@ body {
     align-items: center;
 }
 .Nav ul li {
-    /* padding: 0 10px; */
     flex-grow: 1;
     border-left: 2px solid var(--brand-color);
     text-align: center;
@@ -91,7 +96,6 @@ body {
 .Playlists ul li a {
     color: var(--dark-accent);
     text-decoration: none;
-    /* display: block; */
 }
 .Playlists ul li .review-data a {
     text-shadow: 1px 1px 1px var(--brand-color);
@@ -195,6 +199,13 @@ body {
 .Home .get-started,
 .Footer {
     padding: 10px;
+}
+
+.Home,
+.Profile,
+.Playlists,
+.Playlist {
+    flex-grow: 1;
 }
 
 @media only screen and (min-width: 400px) {
