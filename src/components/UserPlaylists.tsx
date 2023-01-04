@@ -10,10 +10,7 @@ function UserPlaylists() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            getPlaylistByUser(
-                /* *** TO DO *** delete hard-coded email and replace with user?.email! */
-                "ymca@restaurant-playlists.com" /*user?.email!*/
-            ).then((response) => {
+            getPlaylistByUser(user?.email!).then((response) => {
                 setUserPlaylists((currPlaylists) => {
                     return response;
                 });
@@ -101,18 +98,19 @@ function UserPlaylists() {
                                     </div>
                                 </div>
                                 <div className="delete-btn">
-                                    {/* *** TO DO *** uncomment these lines */}
-                                    {/* {user?.name === playlist.nickname ? ( */}
-                                    <Link
-                                        to=""
-                                        className="delete-btn"
-                                        onClick={(event) => {
-                                            handleDelete(playlist.playlist_id);
-                                        }}
-                                    >
-                                        Delete
-                                    </Link>
-                                    {/* ) : null} */}
+                                    {user?.name === playlist.nickname ? (
+                                        <Link
+                                            to=""
+                                            className="delete-btn"
+                                            onClick={(event) => {
+                                                handleDelete(
+                                                    playlist.playlist_id
+                                                );
+                                            }}
+                                        >
+                                            Delete
+                                        </Link>
+                                    ) : null}
                                 </div>
                             </li>
                         );
