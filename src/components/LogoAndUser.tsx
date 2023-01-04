@@ -18,6 +18,12 @@ export default function LogoAndUser() {
                 </Link>
             </div>
             <div className="user-details">
+                <div>
+                    <Link to="/profile">
+                        {user !== undefined ? <div>{user.name}</div> : null}
+                    </Link>
+                    <AuthenticationButton />
+                </div>
                 <Link to="/profile">
                     <div className="profile-pic">
                         {user !== undefined ? (
@@ -25,12 +31,6 @@ export default function LogoAndUser() {
                         ) : null}
                     </div>
                 </Link>
-                <div>
-                    <Link to="/profile">
-                        {user !== undefined ? <div>{user.name}</div> : null}
-                    </Link>
-                    <AuthenticationButton />
-                </div>
             </div>
         </div>
     );
