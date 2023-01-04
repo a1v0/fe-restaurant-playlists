@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getPlaceDetails, initAutocomplete } from "../google-api";
+import { useEffect } from "react";
+import { initAutocomplete } from "../google-api";
 
 export default function Sandbox() {
     useEffect(() => {

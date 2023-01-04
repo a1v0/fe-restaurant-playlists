@@ -1,5 +1,4 @@
 import { Loader } from "@googlemaps/js-api-loader";
-import { useState } from "react";
 
 const API_KEY = process.env.REACT_APP_API_KEY!;
 
