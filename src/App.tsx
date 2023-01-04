@@ -11,10 +11,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({}) 
+  const [loggedInUser, setLoggedInUser] = useState({});
 
-    const { user, isAuthenticated, isLoading } = useAuth0();
-  console.log(user);
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   return (
     <div className="App">
       <LogoAndUser />
