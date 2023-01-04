@@ -32,3 +32,9 @@ export const postUser = (
     return res.data.user;
   });
 };
+
+export const getPlaylistByUser = (user_email: string) =>{
+  return apiConnection.get(`/users/${user_email}/playlists`).then((res) => {
+    return res.data.playlists;
+});
+}
