@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPlaylists } from "../app-api";
 import { getCuisineImg } from "../utils";
+import VoteStars from "./VoteStars";
 
 function Playlists() {
     const [playlistFilters, setPlaylistFilters] = useSearchParams();
@@ -70,21 +71,7 @@ function Playlists() {
                                     </p>
                                     <div className="review-data">
                                         <p>{playlist.vote_count}</p>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
+                                        <VoteStars />
                                         <p>Reviews: {playlist.total_votes}</p>
                                     </div>
                                 </div>
