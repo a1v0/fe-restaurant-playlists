@@ -1,11 +1,12 @@
 import { Loader } from "@googlemaps/js-api-loader";
+import { useState } from "react";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY!;
 
 const loader = new Loader({
     apiKey: API_KEY,
     version: "weekly",
-    libraries: ["places"]
+    libraries: ["places"],
 });
 
 export function getPlaceDetails(placeId: string) {
@@ -29,11 +30,11 @@ export function getPlaceDetails(placeId: string) {
                     "formatted_address",
                     "photo",
                     "url",
-                    "website"
+                    "website",
                     // opening_hours, photos (possibly photo is wrong)
                     // price_level, rating, reviews are useful but more expensive fields
                     // *** TO DO *** add a subtle link to "url" field, because Google requests this
-                ]
+                ],
             };
             return new Promise((resolve, reject) => {
                 service.getDetails(request, (place, status) => {
@@ -44,4 +45,29 @@ export function getPlaceDetails(placeId: string) {
                 });
             });
         });
+}
+
+export function initAutocomplete() {
+    return loader.load().then(() => {
+        const input = document.getElementById(
+            "autocomplete"
+        ) as HTMLInputElement;
+        const options = {
+            types: ["establishment"],
+            componentRestrictions: { country: ["UK"] },
+            fields: ["place_id", "formatted_address", "name"],
+        };
+
+        const autocomplete = new google.maps.places.Autocomplete(
+            input,
+            options
+        );
+
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+            window.sessionStorage.googlePlaceId = JSON.stringify(
+                place.place_id
+            );
+        });
+    });
 }
