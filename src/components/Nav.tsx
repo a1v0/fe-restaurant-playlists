@@ -8,9 +8,15 @@ export default function Nav() {
                 <li>
                     <Link to="/playlists">Playlists</Link>
                 </li>
-                <li>Top Locations</li>
-                <li>Top Cuisines</li>
-                <li>Random playlist</li>
+                <li>
+                    <Link to="">Top Locations</Link>
+                </li>
+                <li>
+                    <Link to="">Top Cuisines</Link>
+                </li>
+                <li>
+                    <Link to="">Random playlist</Link>
+                </li>
             </ul>
         </div>
     );

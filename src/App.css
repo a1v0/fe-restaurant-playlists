@@ -17,9 +17,37 @@ body {
     background-color: var(--light-shade);
 }
 
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .LogoAndUser {
+    align-items: center;
     display: flex;
     justify-content: space-between;
+}
+.LogoAndUser .user-details {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+.LogoAndUser .user-details a {
+    color: var(--dark-accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+.LogoAndUser .user-details a.login-logout {
+    font-weight: normal;
+}
+.LogoAndUser .user-details img {
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px 0 5px 10px;
+}
+.LogoAndUser .user-details div {
+    text-align: right;
 }
 
 .Nav {
@@ -31,13 +59,14 @@ body {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
 }
 .Nav ul li {
-    /* padding: 0 10px; */
     flex-grow: 1;
     border-left: 2px solid var(--brand-color);
     text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .Nav ul li:first-child {
@@ -47,21 +76,37 @@ body {
     background-color: var(--brand-color);
 }
 .Nav ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     font-weight: bold;
     color: var(--light-shade);
     text-decoration: none;
+    height: 100%;
 }
 
+.Home {
+    display: flex;
+    flex-direction: column;
+}
+.Home a {
+    color: var(--dark-accent);
+    font-weight: bold;
+    text-decoration: underline;
+}
 .Home .welcome {
+    flex-grow: 1;
     height: 300px;
-    background-image: url("./images/salad-g1d41f2c01_1280.jpg");
+    background-image: url("https://images.pexels.com/photos/6150432/pexels-photo-6150432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
 }
 .Home .welcome section {
-    background-color: rgba(245, 245, 235, 0.6);
+    background-color: rgba(245, 245, 235, 0.5);
     text-align: center;
+    font-weight: bold;
+    width: 100%;
 }
 .Home .welcome section > p {
     margin-top: 10px;
@@ -69,6 +114,12 @@ body {
 }
 .Home .get-started ul {
     margin-left: 25px;
+}
+.Home .explanation {
+    background-color: var(--brand-color);
+}
+.Home .explanation > p {
+    margin-bottom: 10px;
 }
 
 .Playlists ul {
@@ -91,7 +142,6 @@ body {
 .Playlists ul li a {
     color: var(--dark-accent);
     text-decoration: none;
-    /* display: block; */
 }
 .Playlists ul li .review-data a {
     text-shadow: 1px 1px 1px var(--brand-color);
@@ -170,6 +220,19 @@ body {
     font-weight: normal;
 }
 
+.CreatePlaylist {
+    display: flex;
+    flex-direction: column;
+}
+.CreatePlaylist label {
+    display: flex;
+    flex-direction: column;
+}
+.CreatePlaylist input {
+    padding: 10px;
+    font-size: 1.3em;
+}
+
 .Footer {
     background-color: var(--dark-shade);
     color: var(--light-shade);
@@ -182,7 +245,6 @@ body {
 
 /* component padding and margins */
 
-.Playlists,
 .Playlist,
 .LogoAndUser {
     margin-left: 10px;
@@ -193,8 +255,18 @@ body {
 .Nav ul li a,
 .Home .welcome section,
 .Home .get-started,
+.Home .explanation,
+.Playlists,
+.Profile,
 .Footer {
     padding: 10px;
+}
+
+.Home,
+.Profile,
+.Playlists,
+.Playlist {
+    flex-grow: 1;
 }
 
 @media only screen and (min-width: 400px) {
