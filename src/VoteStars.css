@@ -1,8 +1,15 @@
-.Votes a {
-    text-shadow: 1px 1px 1px var(--brand-color);
-    text-decoration: none;
-    display: inline;
+
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px
 }
-.Votes a:hover {
-    filter: hue-rotate(250deg);
+.on {
+    color: yellow;
+}
+.off {
+    color: #ccc;
 }
