@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import AuthenticationButton from "./Authentication";
 
 export default function Home() {
-  const { user } = useAuth0();
+    const { user } = useAuth0();
     return (
         <main className="Home">
             <div className="welcome">
@@ -34,12 +34,27 @@ export default function Home() {
                 </ul>
             </div>
             <div>
-      {/* <img src="https://images.pexels.com/photos/6150432/pexels-photo-6150432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img> */}
-      <div className="navbar-nav ml-auto">
-        <p>Log In here to create your own</p>
-        <AuthenticationButton />
-      </div>
-    </div>
+                <div className="navbar-nav ml-auto">
+                    <p>Log In here to create your own</p>
+                    <AuthenticationButton />
+                </div>
+                <div className="explanation">
+                    <p>
+                        <strong>Munchify</strong> is the brainchild of the four
+                        chief execs of YMCA Productions, a multibillion start-up
+                        factory based in San Francisco.
+                    </p>
+                    <p>
+                        Their other triumphs include <strong>Lunchify</strong>{" "}
+                        (playlists of midday meal recipes),{" "}
+                        <strong>Brunchify</strong> (playlists of late-morning
+                        meal recipes), <strong>Crunchify</strong> (playlists of
+                        baked or fried goods with a crispy texture) and{" "}
+                        <strong>Hunchify</strong> (playlists of vague
+                        intuitions).
+                    </p>
+                </div>
+            </div>
         </main>
     );
 }
