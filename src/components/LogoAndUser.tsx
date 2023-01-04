@@ -4,14 +4,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AuthenticationButton from "./Authentication";
 
 export default function LogoAndUser() {
+
   const { user } = useAuth0();
   return (
     <div className="LogoAndUser">
       <div className="logo">
         <Link to="/">
-          <img alt="logo" src="" />
+          <img alt="Munchify logo" src="" />
           <div className="company-name">
-            Company Name Here
+            Munchify
             {/* (if header is too cluttered, we can hide
                     this with media queries) */}
           </div>
