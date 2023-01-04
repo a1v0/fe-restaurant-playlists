@@ -37,12 +37,14 @@ body {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
 }
 .Nav ul li {
     flex-grow: 1;
     border-left: 2px solid var(--brand-color);
     text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .Nav ul li:first-child {
@@ -52,10 +54,12 @@ body {
     background-color: var(--brand-color);
 }
 .Nav ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     font-weight: bold;
     color: var(--light-shade);
     text-decoration: none;
+    height: 100%;
 }
 
 .Home {
