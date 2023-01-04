@@ -1,5 +1,6 @@
 import { Loader } from "@googlemaps/js-api-loader";
 
+
 const API_KEY = process.env.REACT_APP_API_KEY!; // this ! is some weird TypeScript thing that somehow reassures the code that this value is never going to be null (or so I understand)
 
 const loader = new Loader({
@@ -44,4 +45,35 @@ export function getPlaceDetails(placeId: string) {
                 });
             });
         });
+}
+
+export function initAutocomplete() {
+    return loader.load().then(() => {
+        const input = document.getElementById(
+            "autocomplete"
+        ) as HTMLInputElement;
+        const options = {
+            types: [
+                "restaurant",
+                "cafe",
+                "bakery",
+                "meal_delivery",
+                "meal_takeaway",
+            ],
+            componentRestrictions: { country: ["UK"] },
+            fields: ["place_id"],
+        };
+
+        const autocomplete = new google.maps.places.Autocomplete(
+            input,
+            options
+        );
+
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+            window.sessionStorage.googlePlaceId = JSON.stringify(
+                place.place_id
+            );
+        });
+    });
 }

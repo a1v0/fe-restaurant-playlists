@@ -7,6 +7,7 @@ import LogoAndUser from "./components/LogoAndUser";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Playlist from "./components/Playlist";
+import CreatePlaylist from "./components/CreatePlaylist";
 import Profile from "./components/Profile";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -22,6 +23,10 @@ function App() {
                 <Route
                     path="/playlists/:playlist_id"
                     element={<Playlist />}
+                ></Route>
+                <Route
+                    path="/user/new-playlist"
+                    element={<CreatePlaylist />}
                 ></Route>
             </Routes>
             <Footer />
