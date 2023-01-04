@@ -1,8 +1,9 @@
 import { Loader } from "@googlemaps/js-api-loader";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const loader = new Loader({
-    // *** TO DO *** potentially try to hide API key in .ENV file
-    apiKey: "AIzaSyC8YX-J9zTpwgUfrZSBlvuImrn2mj99X8c",
+    apiKey: API_KEY,
     version: "weekly",
     libraries: ["places"]
 });
