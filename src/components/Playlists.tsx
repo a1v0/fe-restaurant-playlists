@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
-import american from "../images/cuisine/american.jpg";
-import chinese from "../images/cuisine/chinese.jpg";
-import french from "../images/cuisine/french.jpg";
-import indian from "../images/cuisine/indian.jpg";
-import italian from "../images/cuisine/italian.jpg";
-import japanese from "../images/cuisine/japanese.jpg";
-import defaultCuisine from "../images/cuisine/defaultCuisine.jpg";
-import { Link, useParams, useSearchParams } from "react-router-dom";
-import { getPlaylists } from "../api";
+import { Link, useSearchParams } from "react-router-dom";
+import { getPlaylists } from "../app-api";
+import { getCuisineImg } from "../utils";
 
 function Playlists() {
     const [playlistFilters, setPlaylistFilters] = useSearchParams();
@@ -21,50 +15,39 @@ function Playlists() {
             setPlaylists(playlists);
         });
     }, [playlistFilters]);
+
     return (
         <div className="Playlists">
             <h1>Restaurant Playlists</h1>
             <ul>
                 {playlists.map(
                     (playlist: {
+                        playlist_id: number;
                         name: string;
                         location: string;
                         cuisine: string;
+                        vote_count: string;
+                        total_votes: number;
+                        nickname: string;
                     }) => {
-                        let imgSrc;
-                        switch (playlist.cuisine) {
-                            case "american":
-                                imgSrc = american;
-                                break;
-                            case "chinese":
-                                imgSrc = chinese;
-                                break;
-                            case "french":
-                                imgSrc = french;
-                                break;
-                            case "indian":
-                                imgSrc = indian;
-                                break;
-                            case "italian":
-                                imgSrc = italian;
-                                break;
-                            case "japanese":
-                                imgSrc = japanese;
-                                break;
-                            default:
-                                imgSrc = defaultCuisine;
-                                break;
-                        }
                         return (
-                            <li>
-                                <img
-                                    src={imgSrc}
-                                    alt={`${playlist.cuisine} food`}
-                                />
+                            <li key={playlist.playlist_id}>
+                                <Link to={`/playlists/${playlist.playlist_id}`}>
+                                    <img
+                                        src={getCuisineImg(playlist.cuisine)}
+                                        alt={`${playlist.cuisine} food`}
+                                    />
+                                </Link>
                                 <div className="playlist-info">
-                                    <h2>{playlist.name}</h2>
+                                    <h2>
+                                        <Link
+                                            to={`/playlists/${playlist.playlist_id}`}
+                                        >
+                                            {playlist.name}
+                                        </Link>
+                                    </h2>
                                     <p>
-                                        <b>username here!!!!!!</b>
+                                        <b>{playlist.nickname}</b>
                                     </p>
                                     <p>
                                         {playlist.location
@@ -76,7 +59,7 @@ function Playlists() {
                                     </p>
                                     <div className="review-data">
                                         <p>
-                                            <b>Average Rating Here!!!</b>
+                                            <b>{playlist.vote_count}</b>
                                         </p>
                                         <Link className="star" to="">
                                             ⭐
@@ -94,7 +77,9 @@ function Playlists() {
                                             ⭐
                                         </Link>
                                         <p>
-                                            <b>No. of Reviews Here!!</b>
+                                            <b>
+                                                Reviews: {playlist.total_votes}
+                                            </b>
                                         </p>
                                     </div>
                                 </div>
@@ -102,6 +87,7 @@ function Playlists() {
                         );
                     }
                 )}
+                {/* *** TO DO *** {lines 100 - 127 to be deleted once happy with this page} */}
                 <li>
                     <img
                         src="https://res.cloudinary.com/tf-lab/image/upload/w_600,h_337,c_fill,q_auto,f_auto/restaurant/5792d411-5461-44fd-aec6-c284b82b81ad/9471e3a2-7790-48ca-896b-4161bc9bc002.jpg"
