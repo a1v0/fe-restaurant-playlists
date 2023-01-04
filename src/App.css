@@ -91,7 +91,7 @@ body {
 .Playlists ul li a {
     color: var(--dark-accent);
     text-decoration: none;
-    display: block;
+    /* display: block; */
 }
 .Playlists ul li .review-data a {
     text-shadow: 1px 1px 1px var(--brand-color);
