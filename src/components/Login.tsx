@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
     return (
-        <Link to="" onClick={() => loginWithRedirect()}>
+        <Link
+            to=""
+            onClick={() => loginWithRedirect()}
+            className="login-logout"
+        >
             Log In
         </Link>
     );

@@ -12,6 +12,7 @@ const LogoutButton = () => {
                     returnTo: window.location.origin,
                 })
             }
+            className="login-logout"
         >
             Log Out
         </Link>
