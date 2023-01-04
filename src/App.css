@@ -220,6 +220,19 @@ body {
     font-weight: normal;
 }
 
+.CreatePlaylist {
+    display: flex;
+    flex-direction: column;
+}
+.CreatePlaylist label {
+    display: flex;
+    flex-direction: column;
+}
+.CreatePlaylist input {
+    padding: 10px;
+    font-size: 1.3em;
+}
+
 .Footer {
     background-color: var(--dark-shade);
     color: var(--light-shade);
@@ -244,6 +257,7 @@ body {
 .Home .get-started,
 .Home .explanation,
 .Playlists,
+.Profile,
 .Footer {
     padding: 10px;
 }

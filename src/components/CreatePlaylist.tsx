@@ -35,7 +35,7 @@ export default function CreatePlaylist() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="CreatePlaylist">
             <label>
                 Playlist name
                 <input type="text" id="playlist-name"></input>
