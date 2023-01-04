@@ -13,5 +13,6 @@ First, create a file in the root directory called `.env`. Write this in the file
 To access this variable, simply add this to your file:
 
 ```js
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY!;
+// the exclamation mark is some TypeScript thing that reassures the compiler that the value of API_KEY is never going to be null (or something like that)
 ```
