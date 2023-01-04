@@ -6,15 +6,14 @@ export default function Home() {
         <main className="Home">
             <div className="welcome">
                 <section>
-                    <h1>Restaurant Playlists</h1>
+                    <h1>Munchify</h1>
                     <p>
                         Food is delicious and sharing is caring. Why not share
                         delicious food with others?
                     </p>
                     <p>
-                        Here at Restaurant Playlists, we make that simple. You
-                        can create and share "playlists" of your favourite
-                        restaurants.
+                        Here at Munchify, we make that simple. You can create
+                        and share "playlists" of your favourite restaurants.
                     </p>
                 </section>
             </div>
@@ -27,7 +26,7 @@ export default function Home() {
                     <li>
                         <Link to="/playlists">Browse</Link>
                     </li>
-                    <li>Create an account</li>
+                    <li>Create a Munchify account</li>
                     <li>Select a random playlist</li>
                 </ul>
             </div>

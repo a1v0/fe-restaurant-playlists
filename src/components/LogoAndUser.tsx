@@ -6,9 +6,9 @@ export default function LogoAndUser() {
         <div className="LogoAndUser">
             <div className="logo">
                 <Link to="/">
-                    <img alt="logo" src="" />
+                    <img alt="Munchify logo" src="" />
                     <div className="company-name">
-                        Company Name Here
+                        Munchify
                         {/* (if header is too cluttered, we can hide
                     this with media queries) */}
                     </div>
