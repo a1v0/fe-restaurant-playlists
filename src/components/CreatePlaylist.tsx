@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { postNewPlaylist } from "../app-api";
 import { initAutocomplete } from "../google-api";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function CreatePlaylist() {
     const initialState: string[] = [];
     const [restaurantsToAdd, setRestaurantsToAdd] = useState(initialState);
     const [restaurantAdded, setRestaurantAdded] = useState(false);
+    const { user } = useAuth0();
 
     useEffect(() => {
         initAutocomplete();
@@ -29,7 +31,7 @@ export default function CreatePlaylist() {
             event.target[1].value,
             event.target[2].value,
             event.target[3].value,
-            "ymca@restaurant-playlists.com",
+            user?.email!,
             restaurantsToAdd
         );
     };
