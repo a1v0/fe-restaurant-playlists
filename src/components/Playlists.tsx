@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getPlaylists } from "../app-api";
 import { getCuisineImg } from "../utils";
 
 function Playlists() {
+    const [playlistFilters, setPlaylistFilters] = useSearchParams();
+
     const [playlists, setPlaylists] = useState([]);
 
     useEffect(() => {
-        getPlaylists().then((playlists) => {
+        const locationFilter = playlistFilters.get("location");
+        const cuisineFilter = playlistFilters.get("cuisine");
+        getPlaylists(locationFilter, cuisineFilter).then((playlists) => {
             setPlaylists(playlists);
         });
-    }, []);
+    }, [playlistFilters]);
 
     return (
         <div className="Playlists">
