@@ -30,7 +30,8 @@ export default function Home() {
                         <Link to="/playlists">Browse all playlists</Link>
                     </li>
                     <li>
-                        Create a Munchify account here: <AuthenticationButton />
+                        <AuthenticationButton /> (you can also create a new
+                        Munchify account here)
                     </li>
                     {/* <li>Select a random playlist</li> */}
                 </ul>
@@ -38,7 +39,7 @@ export default function Home() {
             <div className="explanation">
                 <p>
                     <strong>Munchify</strong> is the brainchild of the four
-                    chief execs of YMCA Productions, a multibillion start-up
+                    chief execs of YMCA Productions, a multinational start-up
                     factory based in San Francisco.
                 </p>
                 <p>
