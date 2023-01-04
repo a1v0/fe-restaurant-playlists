@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Auth0Provider
+    // TO DO update domain and clientId when hosting the App
       domain="dev-h3joz3ssdv36fqhr.eu.auth0.com"
       clientId="GTTvFWdXYaF21kq5EgnGN0MU8zjCjD5k"
       redirectUri={window.location.origin}
