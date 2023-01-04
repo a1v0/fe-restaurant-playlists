@@ -79,6 +79,7 @@ function Playlist() {
             <img
                 src={getCuisineImg(playlist[0].cuisine)}
                 className="cuisine-img"
+                alt={`${playlist[0].cuisine} food`}
             />
             {playlist[0].description ? (
                 <p className="playlist-description">
@@ -100,6 +101,7 @@ function Playlist() {
                                     <a
                                         href={restaurant.website}
                                         target="_blank"
+                                        rel="noreferrer"
                                     >
                                         (view website)
                                     </a>
