@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getPlaylistById } from "../app-api";
 import { getPlaceDetails } from "../google-api";
 import { getCuisineImg } from "../utils";
@@ -13,8 +13,8 @@ function Playlist() {
             location: "",
             cuisine: "",
             description: "",
-            place_id: ""
-        }
+            place_id: "",
+        },
     ]);
 
     const [restaurantDetails, setRestaurantDetails] = useState([
@@ -24,8 +24,8 @@ function Playlist() {
             photoUrl: "",
             url: "",
             website: "",
-            placeId: ""
-        }
+            placeId: "",
+        },
     ]);
 
     useEffect(() => {
@@ -61,14 +61,25 @@ function Playlist() {
                     by <strong>{playlist[0].owner_nickname}</strong>
                 </p>
                 <p>
-                    {playlist[0].location ? "#" + playlist[0].location : null}
+                    {playlist[0].location ? (
+                        <Link
+                            to={`/playlists?location=${playlist[0].location}`}
+                        >
+                            {"#" + playlist[0].location}
+                        </Link>
+                    ) : null}
                     {playlist[0].location && playlist[0].cuisine ? " " : null}
-                    {playlist[0].cuisine ? "#" + playlist[0].cuisine : null}
+                    {playlist[0].cuisine ? (
+                        <Link to={`/playlists?cuisine=${playlist[0].cuisine}`}>
+                            {"#" + playlist[0].cuisine}
+                        </Link>
+                    ) : null}
                 </p>
             </div>
             <img
                 src={getCuisineImg(playlist[0].cuisine)}
                 className="cuisine-img"
+                alt={`${playlist[0].cuisine} food`}
             />
             {playlist[0].description ? (
                 <p className="playlist-description">
@@ -90,6 +101,7 @@ function Playlist() {
                                     <a
                                         href={restaurant.website}
                                         target="_blank"
+                                        rel="noreferrer"
                                     >
                                         (view website)
                                     </a>

@@ -1,6 +1,7 @@
 import { Loader } from "@googlemaps/js-api-loader";
 
-const API_KEY = process.env.REACT_APP_API_KEY!;
+
+const API_KEY = process.env.REACT_APP_API_KEY!; // this ! is some weird TypeScript thing that somehow reassures the code that this value is never going to be null (or so I understand)
 
 const loader = new Loader({
     apiKey: API_KEY,

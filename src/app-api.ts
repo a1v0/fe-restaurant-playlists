@@ -46,3 +46,24 @@ export const postNewPlaylist = (
             );
         });
 };
+
+export const postUser = (
+  user_email: string,
+  nickname: string,
+  avatar_url: string
+) => {
+  const newUser = {
+    user_email: user_email,
+    nickname: nickname,
+    avatar_url: avatar_url,
+  };
+  return apiConnection.post("/users", newUser).then((res) => {
+    return res.data.user;
+  });
+};
+
+export const getPlaylistByUser = (user_email: string) =>{
+  return apiConnection.get(`/users/${user_email}/playlists`).then((res) => {
+    return res.data.playlists;
+});
+}

@@ -4,7 +4,8 @@ function Footer() {
     return (
         <div className="Footer">
             <p>
-                Copyright &copy; 2023 <Link to="/">YMCA Productions</Link>.
+                Copyright &copy; 2023 YMCA Productions, trading as{" "}
+                <Link to="/">Munchify</Link>.
             </p>
         </div>
     );
