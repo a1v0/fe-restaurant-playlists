@@ -62,6 +62,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+.Home a {
+    color: var(--dark-accent);
+    font-weight: bold;
+    text-decoration: underline;
+}
 .Home .welcome {
     flex-grow: 1;
     height: 300px;
