@@ -8,13 +8,13 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <Auth0Provider
-    domain="dev-h3joz3ssdv36fqhr.eu.auth0.com"
-    clientId="GTTvFWdXYaF21kq5EgnGN0MU8zjCjD5k"
-    redirectUri={window.location.origin}
-  >
-    <BrowserRouter>
+  <BrowserRouter>
+    <Auth0Provider
+      domain="dev-h3joz3ssdv36fqhr.eu.auth0.com"
+      clientId="GTTvFWdXYaF21kq5EgnGN0MU8zjCjD5k"
+      redirectUri={window.location.origin}
+    >
       <App />
-    </BrowserRouter>
-  </Auth0Provider>
+    </Auth0Provider>
+  </BrowserRouter>
 );

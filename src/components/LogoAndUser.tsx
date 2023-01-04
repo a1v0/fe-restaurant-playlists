@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import AuthenticationButton from "./Authentication";
 
 export default function LogoAndUser() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -17,10 +18,17 @@ export default function LogoAndUser() {
         </Link>
       </div>
       <div className="user-details">
-        <div className="profile-pic">
-        {user !== undefined ? <img alt="avatar" src={user.picture}></img> : null}
+        <Link to="/profile">
+          <div className="profile-pic">
+            {user !== undefined ? (
+              <img alt="avatar" src={user.picture}></img>
+            ) : null}
+          </div>
+          {user !== undefined ? <div>{user.name}</div> : <p></p>}
+        </Link>
+        <div className="navbar-nav ml-auto">
+          <AuthenticationButton />
         </div>
-        {user !== undefined ? <div>{user.name}</div> : <p>Login</p>}
       </div>
     </div>
   );
