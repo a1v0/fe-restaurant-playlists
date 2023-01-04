@@ -143,14 +143,18 @@ body {
     color: var(--dark-accent);
     text-decoration: none;
 }
-.Playlists ul li .review-data a {
+
+/* Styling for VoteStars component is in root folder /VoteStars.css*/
+
+/* .Playlists ul li .review-data a {
     text-shadow: 1px 1px 1px var(--brand-color);
     text-decoration: none;
     display: inline;
 }
 .Playlists ul li .review-data a:hover {
     filter: hue-rotate(250deg);
-}
+} */
+
 .Playlists .review-data p {
     display: inline-block;
 }
