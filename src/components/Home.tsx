@@ -27,33 +27,28 @@ export default function Home() {
                 </p>
                 <ul>
                     <li>
-                        <Link to="/playlists">Browse</Link>
+                        <Link to="/playlists">Browse all playlists</Link>
                     </li>
-                    <li>Create a Munchify account</li>
-                    <li>Select a random playlist</li>
+                    <li>
+                        Create a Munchify account here: <AuthenticationButton />
+                    </li>
+                    {/* <li>Select a random playlist</li> */}
                 </ul>
             </div>
-            <div>
-                <div className="navbar-nav ml-auto">
-                    <p>Log In here to create your own</p>
-                    <AuthenticationButton />
-                </div>
-                <div className="explanation">
-                    <p>
-                        <strong>Munchify</strong> is the brainchild of the four
-                        chief execs of YMCA Productions, a multibillion start-up
-                        factory based in San Francisco.
-                    </p>
-                    <p>
-                        Their other triumphs include <strong>Lunchify</strong>{" "}
-                        (playlists of midday meal recipes),{" "}
-                        <strong>Brunchify</strong> (playlists of late-morning
-                        meal recipes), <strong>Crunchify</strong> (playlists of
-                        baked or fried goods with a crispy texture) and{" "}
-                        <strong>Hunchify</strong> (playlists of vague
-                        intuitions).
-                    </p>
-                </div>
+            <div className="explanation">
+                <p>
+                    <strong>Munchify</strong> is the brainchild of the four
+                    chief execs of YMCA Productions, a multibillion start-up
+                    factory based in San Francisco.
+                </p>
+                <p>
+                    Their other triumphs include <strong>Lunchify</strong>{" "}
+                    (playlists of midday meal recipes),{" "}
+                    <strong>Brunchify</strong> (playlists of late-morning meal
+                    recipes), <strong>Crunchify</strong> (playlists of baked or
+                    fried goods with a crispy texture) and{" "}
+                    <strong>Hunchify</strong> (playlists of vague intuitions).
+                </p>
             </div>
         </main>
     );
