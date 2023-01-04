@@ -210,7 +210,6 @@ body {
 
 /* component padding and margins */
 
-.Playlists,
 .Playlist,
 .LogoAndUser {
     margin-left: 10px;
@@ -222,6 +221,7 @@ body {
 .Home .welcome section,
 .Home .get-started,
 .Home .explanation,
+.Playlists,
 .Footer {
     padding: 10px;
 }
