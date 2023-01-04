@@ -30,11 +30,19 @@ export const postNewPlaylist = (
     owner_email: string,
     restaurants: string[]
 ) => {
-    return apiConnection.post("/playlists", {
-        name,
-        description,
-        location,
-        cuisine,
-        owner_email,
-    });
+    return apiConnection
+        .post("/playlists", {
+            name,
+            description,
+            location,
+            cuisine,
+            owner_email,
+        })
+        .then((response) => {
+            const newPlaylistId = response.data.playlist.playlist_id;
+            return apiConnection.post(
+                `/playlists/${newPlaylistId}/restaurants`,
+                { place_ids: restaurants }
+            );
+        });
 };

@@ -9,7 +9,6 @@ export default function CreatePlaylist() {
 
     useEffect(() => {
         initAutocomplete();
-        console.log(restaurantsToAdd);
     }, [restaurantsToAdd]);
 
     const handleAddToPlaylist = () => {
@@ -60,7 +59,9 @@ export default function CreatePlaylist() {
                     type="text"
                     placeholder="type restaurant name"
                 ></input>
-                <button onClick={handleAddToPlaylist}>add restaurant</button>
+                <button type="button" onClick={handleAddToPlaylist}>
+                    add restaurant
+                </button>
                 {restaurantAdded ? <p>restaurant added successfully</p> : null}
             </label>
             <button type="submit">Create Playlist</button>
