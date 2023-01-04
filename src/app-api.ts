@@ -17,3 +17,18 @@ export const getPlaylistById = (playlist_id: number) => {
         return res.data.playlist;
     });
 };
+
+export const postUser = (
+  user_email: string,
+  nickname: string,
+  avatar_url: string
+) => {
+  const newUser = {
+    user_email: user_email,
+    nickname: nickname,
+    avatar_url: avatar_url,
+  };
+  return apiConnection.post("/users", newUser).then((res) => {
+    return res.data.user;
+  });
+};
