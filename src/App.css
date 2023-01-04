@@ -58,7 +58,12 @@ body {
     text-decoration: none;
 }
 
+.Home {
+    display: flex;
+    flex-direction: column;
+}
 .Home .welcome {
+    flex-grow: 1;
     height: 300px;
     background-image: url("https://images.pexels.com/photos/6150432/pexels-photo-6150432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
@@ -70,6 +75,7 @@ body {
     background-color: rgba(245, 245, 235, 0.5);
     text-align: center;
     font-weight: bold;
+    width: 100%;
 }
 .Home .welcome section > p {
     margin-top: 10px;
