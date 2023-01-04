@@ -5,24 +5,21 @@ export default function CreatePlaylist() {
     useEffect(() => {
         initAutocomplete();
     }, []);
+
+    const handleAddToPlaylist = () => {
+        initAutocomplete().then(() => {
+            console.log(JSON.parse(window.sessionStorage.googlePlaceId));
+        });
+    };
+
     return (
         <form
             onSubmit={(event) => {
                 event.preventDefault();
-                initAutocomplete().then(() => {
-                    console.log(
-                        JSON.parse(window.sessionStorage.googlePlaceId)
-                    );
-                });
             }}
         >
-            <input
-                id="autocomplete"
-                type="text"
-                placeholder="hello"
-                onBlur={() => {}}
-            ></input>
-            <button>add to playlist</button>
+            <input id="autocomplete" type="text" placeholder="hello"></input>
+            <button onClick={handleAddToPlaylist}>add to playlist</button>
         </form>
     );
 }

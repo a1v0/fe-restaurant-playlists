@@ -52,9 +52,15 @@ export function initAutocomplete() {
             "autocomplete"
         ) as HTMLInputElement;
         const options = {
-            types: ["establishment"],
+            types: [
+                "restaurant",
+                "cafe",
+                "bakery",
+                "meal_delivery",
+                "meal_takeaway",
+            ],
             componentRestrictions: { country: ["UK"] },
-            fields: ["place_id", "formatted_address", "name"],
+            fields: ["place_id"],
         };
 
         const autocomplete = new google.maps.places.Autocomplete(
