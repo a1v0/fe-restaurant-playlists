@@ -7,7 +7,7 @@ import LogoAndUser from "./components/LogoAndUser";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Playlist from "./components/Playlist";
-import Sandbox from "./components/Sandbox";
+import CreatePlaylist from "./components/CreatePlaylist";
 
 function App() {
     return (
@@ -21,8 +21,10 @@ function App() {
                     path="/playlists/:playlist_id"
                     element={<Playlist />}
                 ></Route>
-                {/* *** TO DO *** delete the sandbox route and sandbox file once it is no longer necessary*/}
-                <Route path="/sandbox" element={<Sandbox />}></Route>
+                <Route
+                    path="/user/new-playlist"
+                    element={<CreatePlaylist />}
+                ></Route>
             </Routes>
             <Footer />
         </div>
