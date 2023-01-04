@@ -53,6 +53,24 @@ body {
     text-decoration: none;
 }
 
+.Home .welcome {
+    height: 300px;
+    background-image: url("./images/salad-g1d41f2c01_1280.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.Home .welcome section {
+    background-color: rgba(245, 245, 235, 0.6);
+    text-align: center;
+}
+.Home .welcome section > p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.Home .get-started ul {
+    margin-left: 25px;
+}
+
 .Playlists ul {
     list-style-type: none;
     display: grid;
@@ -173,6 +191,8 @@ body {
 
 .Playlists ul li .playlist-info,
 .Nav ul li a,
+.Home .welcome section,
+.Home .get-started,
 .Footer {
     padding: 10px;
 }
