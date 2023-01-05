@@ -26,7 +26,7 @@ function UserPlaylists(props: { rerender: number }) {
         });
     }
 
-    return (
+    return !userPlaylists.length ? null : (
         <div className="Playlists">
             <h1>My Platelists</h1>
             <ul>
