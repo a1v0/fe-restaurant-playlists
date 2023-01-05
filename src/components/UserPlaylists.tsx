@@ -3,7 +3,8 @@ import { deletePlaylistById, getPlaylistByUser } from "../app-api";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import { getCuisineImg } from "../utils";
-function UserPlaylists() {
+
+function UserPlaylists(props: { rerender: number }) {
     const [userPlaylists, setUserPlaylists] = useState([]);
     const [deleting, setDeleting] = useState(false);
     const { user, isAuthenticated } = useAuth0();
@@ -16,7 +17,7 @@ function UserPlaylists() {
                 });
             });
         }
-    }, [isAuthenticated, deleting]);
+    }, [isAuthenticated, deleting, props.rerender]);
 
     function handleDelete(playlist_id: number) {
         setDeleting(true);
@@ -25,9 +26,9 @@ function UserPlaylists() {
         });
     }
 
-    return (
+    return !userPlaylists.length ? null : (
         <div className="Playlists">
-            <h1>My Playlists</h1>
+            <h1>My Platelists</h1>
             <ul>
                 {userPlaylists.map(
                     (playlist: {
