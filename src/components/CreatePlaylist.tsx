@@ -65,7 +65,11 @@ export default function CreatePlaylist() {
                     ></input>
                 </label>
                 {restaurantAdded ? (
-                    <p>restaurant added successfully</p>
+                    <p>
+                        {restaurantsToAdd.length} restaurant
+                        {restaurantsToAdd.length !== 1 ? "s" : null} added to
+                        platelist
+                    </p>
                 ) : (
                     <p></p>
                 )}
