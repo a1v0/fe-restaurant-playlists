@@ -189,11 +189,12 @@ p {
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: 30px
+    font-size: 30px;
 }
 
 .Playlists .review-votestars .on {
-    color: yellow;
+    text-shadow: 1px 1px 2px yellow, 0 0 2em var(--brand-color), 0 0 0.2em blue;
+    color: yellow
 }
 .Playlists .review-votestars .off {
     color: #f5f5eb;
