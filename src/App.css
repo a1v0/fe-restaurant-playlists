@@ -140,6 +140,17 @@ body {
     margin-top: 10px;
     margin-bottom: 15px;
 }
+.Home .get-started {
+    font-size: 1.4em;
+}
+.Home .get-started h2 {
+    text-align: center;
+}
+.Home .get-started > div {
+    background-color: var(--light-accent);
+    border-radius: 5px;
+    padding: 10px;
+}
 .Home .get-started ul {
     margin-left: 25px;
 }
@@ -194,7 +205,6 @@ p {
 }
 .Playlists ul li:hover {
     background-color: var(--dark-shade);
-
 }
 .Playlists ul li img {
     width: 100%;
@@ -433,6 +443,11 @@ p {
         height: 150px;
     }
 
+    .Home .get-started > div {
+        width: 65%;
+        margin: 0 auto;
+    }
+
     .Playlist {
         max-width: 900px;
         margin: 0 auto;
@@ -474,6 +489,10 @@ p {
     }
     .Playlists ul li img {
         height: 200px;
+    }
+
+    .Home .get-started > div {
+        width: 55%;
     }
 
     .Home,

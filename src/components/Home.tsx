@@ -22,19 +22,21 @@ export default function Home() {
             </div>
             <div className="get-started">
                 <h2>Get Started</h2>
-                <p>
-                    <strong>I want to...</strong>
-                </p>
-                <ul>
-                    <li>
-                        <Link to="/playlists">Browse all platelists</Link>
-                    </li>
-                    <li>
-                        <AuthenticationButton /> (you can also create a new
-                        Munchify account here)
-                    </li>
-                    {/* <li>Select a random playlist</li> */}
-                </ul>
+                <div>
+                    <p>
+                        <strong>I want to...</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <Link to="/playlists">Browse all platelists</Link>
+                        </li>
+                        <li>
+                            <AuthenticationButton /> (you can also create a new
+                            Munchify account here)
+                        </li>
+                        {/* <li>Select a random platelist</li> */}
+                    </ul>
+                </div>
             </div>
             <div className="explanation">
                 <p>
