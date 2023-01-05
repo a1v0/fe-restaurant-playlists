@@ -27,7 +27,7 @@ function UserPlaylists() {
 
     return (
         <div className="Playlists">
-            <h1>Restaurant Playlists</h1>
+            <h1>My Playlists</h1>
             <ul>
                 {userPlaylists.map(
                     (playlist: {
@@ -60,21 +60,13 @@ function UserPlaylists() {
                                     </p>
                                     <p>
                                         {playlist.location ? (
-                                            <Link
-                                                to={`?location=${playlist.location}`}
-                                            >
-                                                {`#${playlist.location}`}
-                                            </Link>
+                                            <div>{`#${playlist.location}`}</div>
                                         ) : null}
                                         {playlist.location && playlist.cuisine
                                             ? " "
                                             : null}
                                         {playlist.cuisine ? (
-                                            <Link
-                                                to={`?cuisine=${playlist.cuisine}`}
-                                            >
-                                                {`#${playlist.cuisine}`}
-                                            </Link>
+                                            <div>{`#${playlist.cuisine}`}</div>
                                         ) : null}
                                     </p>
                                     <div className="review-data">
@@ -89,20 +81,21 @@ function UserPlaylists() {
                                             {playlist.total_votes}
                                         </p>
                                     </div>
-                                    <div>
-                                        {user?.name === playlist.nickname ? (
-                                            <button
-                                                id="delete-playlist"
-                                                onClick={(event) => {
-                                                    handleDelete(
-                                                        playlist.playlist_id
-                                                    );
-                                                }}
-                                            >
-                                                Delete
-                                            </button>
-                                        ) : null}
-                                    </div>
+                                </div>
+                                <div className="delete-btn">
+                                    {user?.name === playlist.nickname ? (
+                                        <Link
+                                            to=""
+                                            className="delete-btn"
+                                            onClick={(event) => {
+                                                handleDelete(
+                                                    playlist.playlist_id
+                                                );
+                                            }}
+                                        >
+                                            Delete
+                                        </Link>
+                                    ) : null}
                                 </div>
                             </li>
                         );

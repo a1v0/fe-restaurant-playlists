@@ -77,4 +77,13 @@ export const postVote = (playlistId: number, voteCount: number) => {
     return apiConnection.post(`/votes`, body).then((response) => {
         return response.data.votes;
     });
+
+export const deleteRestaurantFromPlaylist = (
+    playlist_id: number,
+    place_id: string
+) => {
+    return apiConnection.delete(
+        `/playlists/${playlist_id}/restaurants/${place_id}`
+    );
+
 };
