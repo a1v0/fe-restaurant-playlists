@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 import { postVote } from "../app-api";
 import "../VoteStars.css";
 
-interface playlistIdProp {
+interface VoteStarsProps {
     playlistId: number;
+    setVoted: any;
 }
 
-function VoteStars({ playlistId }: playlistIdProp) {
+function VoteStars({ playlistId, setVoted }: VoteStarsProps) {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     const voteCount = useRef(0);
-
-    // => post vote when onClick happens
 
     return (
         <div className="star-rating">
@@ -27,6 +26,7 @@ function VoteStars({ playlistId }: playlistIdProp) {
                             setRating(index);
                             voteCount.current = index;
                             postVote(playlistId, voteCount.current);
+                            setVoted(true);
                         }}
                         onMouseEnter={() => {
                             setHover(index);

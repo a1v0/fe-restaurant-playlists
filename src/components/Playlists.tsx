@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getPlaylists } from "../app-api";
 import { getCuisineImg } from "../utils";
@@ -6,16 +6,19 @@ import VoteStars from "./VoteStars";
 
 function Playlists() {
     const [playlistFilters, setPlaylistFilters] = useSearchParams();
-
     const [playlists, setPlaylists] = useState([]);
+    const [voted, setVoted] = useState(false);
+
+    //*** TO DO *** bug: when user votes the order of some playlists change without warning
 
     useEffect(() => {
         const locationFilter = playlistFilters.get("location");
         const cuisineFilter = playlistFilters.get("cuisine");
         getPlaylists(locationFilter, cuisineFilter).then((playlists) => {
             setPlaylists(playlists);
+            setVoted(false);
         });
-    }, [playlistFilters]);
+    }, [playlistFilters, voted]);
 
     return (
         <div className="Playlists">
@@ -78,6 +81,7 @@ function Playlists() {
                                         ) : null}
                                         <VoteStars
                                             playlistId={playlist.playlist_id}
+                                            setVoted={setVoted}
                                         />
                                         <p>
                                             Total Reviews:{" "}
