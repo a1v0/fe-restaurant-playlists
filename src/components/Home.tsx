@@ -16,7 +16,7 @@ export default function Home() {
                     </p>
                     <p>
                         Here at Munchify, we make that simple. You can create
-                        and share "playlists" of your favourite restaurants.
+                        and share "platelists" of your favourite restaurants.
                     </p>
                 </section>
             </div>
@@ -27,7 +27,7 @@ export default function Home() {
                 </p>
                 <ul>
                     <li>
-                        <Link to="/playlists">Browse all playlists</Link>
+                        <Link to="/playlists">Browse all platelists</Link>
                     </li>
                     <li>
                         <AuthenticationButton /> (you can also create a new
@@ -44,11 +44,11 @@ export default function Home() {
                 </p>
                 <p>
                     Their other triumphs include <strong>Lunchify</strong>{" "}
-                    (playlists of midday meal recipes),{" "}
-                    <strong>Brunchify</strong> (playlists of late-morning meal
-                    recipes), <strong>Crunchify</strong> (playlists of baked or
+                    (platelists of midday meal recipes),{" "}
+                    <strong>Brunchify</strong> (platelists of late-morning meal
+                    recipes), <strong>Crunchify</strong> (platelists of baked or
                     fried goods with a crispy texture) and{" "}
-                    <strong>Hunchify</strong> (playlists of vague intuitions).
+                    <strong>Hunchify</strong> (platelists of vague intuitions).
                 </p>
             </div>
         </main>
