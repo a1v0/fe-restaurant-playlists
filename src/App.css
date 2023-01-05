@@ -194,6 +194,7 @@ p {
 }
 .Playlists ul li:hover {
     background-color: var(--dark-shade);
+
 }
 .Playlists ul li img {
     width: 100%;
@@ -215,6 +216,13 @@ p {
 }
 .Playlists .review-data p {
     display: inline-block;
+}
+.Playlists div.delete-btn {
+    text-align: center;
+    background-color: grey;
+}
+.Playlists ul li a.delete-btn {
+    display: block;
 }
 
 .Playlist {
@@ -280,6 +288,17 @@ p {
     color: var(--dark-shade);
     font-size: 0.8em;
     font-weight: normal;
+}
+.Playlist .delete-restaurant-btn {
+    background-color: var(--dark-accent);
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.Playlist .delete-restaurant-btn a {
+    display: block;
+    color: var(--light-accent);
+    padding: 5px;
 }
 
 .profile-details img {

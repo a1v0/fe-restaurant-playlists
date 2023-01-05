@@ -1,10 +1,12 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getPlaylistById } from "../app-api";
+import { deleteRestaurantFromPlaylist, getPlaylistById } from "../app-api";
 import { getPlaceDetails } from "../google-api";
 import { getCuisineImg } from "../utils";
 
 function Playlist() {
+    const { user, isAuthenticated } = useAuth0();
     const { playlist_id } = useParams();
     const [playlist, setPlaylist] = useState([
         {
@@ -16,6 +18,8 @@ function Playlist() {
             place_id: "",
         },
     ]);
+
+    const [deleting, setDeleting] = useState(0);
 
     const [restaurantDetails, setRestaurantDetails] = useState([
         {
@@ -48,7 +52,16 @@ function Playlist() {
                 });
                 setRestaurantDetails(placeDetailsWithPhotoUrls);
             });
-    }, [playlist_id]);
+    }, [playlist_id, deleting]);
+
+    const handleDelete = (restaurant: { placeId: string }) => {
+        deleteRestaurantFromPlaylist(
+            Number(playlist_id),
+            restaurant.placeId
+        ).then(() => {
+            setDeleting(deleting + 1);
+        });
+    };
 
     return (
         <main className="Playlist">
@@ -107,6 +120,19 @@ function Playlist() {
                                     </a>
                                 </h3>
                                 <p>{restaurant.formatted_address}</p>
+                                {user?.nickname ===
+                                playlist[0].owner_nickname ? (
+                                    <div className="delete-restaurant-btn">
+                                        <Link
+                                            to=""
+                                            onClick={() => {
+                                                handleDelete(restaurant);
+                                            }}
+                                        >
+                                            Remove from playlist
+                                        </Link>
+                                    </div>
+                                ) : null}
                             </div>
                         </li>
                     );

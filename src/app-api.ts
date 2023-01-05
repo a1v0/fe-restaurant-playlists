@@ -71,3 +71,12 @@ export const getPlaylistByUser = (user_email: string) => {
 export const deletePlaylistById = (playlist_id: number) => {
     return apiConnection.delete(`/playlists/${playlist_id}`);
 };
+
+export const deleteRestaurantFromPlaylist = (
+    playlist_id: number,
+    place_id: string
+) => {
+    return apiConnection.delete(
+        `/playlists/${playlist_id}/restaurants/${place_id}`
+    );
+};
