@@ -77,7 +77,7 @@ export default function CreatePlaylist(props: {
                     <button type="button" onClick={handleAddToPlaylist}>
                         Add Restaurant
                     </button>
-                    <button type="submit">Create Platelist</button>
+                    <button type="submit" className="playlist-submit">Create Platelist</button>
                 </div>
             </form>
         </main>
