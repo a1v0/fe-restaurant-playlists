@@ -25,7 +25,7 @@ function UserPlaylists() {
         });
     }
 
-    return (
+    return !userPlaylists.length ? null : (
         <div className="Playlists">
             <h1>My Playlists</h1>
             <ul>
