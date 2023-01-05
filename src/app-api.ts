@@ -76,7 +76,8 @@ export const postVote = (playlistId: number, voteCount: number) => {
     const body = { playlist_id: playlistId, vote_count: voteCount };
     return apiConnection.post(`/votes`, body).then((response) => {
         return response.data.votes;
-    })};
+    });
+}
 
 export const deleteRestaurantFromPlaylist = (
     playlist_id: number,
@@ -85,5 +86,4 @@ export const deleteRestaurantFromPlaylist = (
     return apiConnection.delete(
         `/playlists/${playlist_id}/restaurants/${place_id}`
     );
-
 };

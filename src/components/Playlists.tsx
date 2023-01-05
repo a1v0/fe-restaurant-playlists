@@ -76,6 +76,7 @@ function Playlists() {
                                             </p>
                                         ) : null}
                                         <VoteStars
+                                            className="review-votestars"
                                             playlistId={playlist.playlist_id}
                                             totalVotes={playlist.total_votes}
                                         />

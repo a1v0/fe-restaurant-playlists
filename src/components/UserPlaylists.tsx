@@ -82,8 +82,7 @@ function UserPlaylists(props: { rerender: number }) {
                                             {playlist.total_votes}
                                         </p>
                                     </div>
-                                </div>
-                                <div className="delete-btn">
+                                <div className="delete-button">
                                     {user?.name === playlist.nickname ? (
                                         <Link
                                             to=""
@@ -97,6 +96,7 @@ function UserPlaylists(props: { rerender: number }) {
                                             Delete
                                         </Link>
                                     ) : null}
+                                </div>
                                 </div>
                             </li>
                         );
