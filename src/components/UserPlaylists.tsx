@@ -81,8 +81,7 @@ function UserPlaylists() {
                                             {playlist.total_votes}
                                         </p>
                                     </div>
-                                </div>
-                                <div className="delete-btn">
+                                <div className="delete-button">
                                     {user?.name === playlist.nickname ? (
                                         <Link
                                             to=""
@@ -96,6 +95,7 @@ function UserPlaylists() {
                                             Delete
                                         </Link>
                                     ) : null}
+                                </div>
                                 </div>
                             </li>
                         );

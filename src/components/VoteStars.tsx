@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { postVote } from "../app-api";
-import "../VoteStars.css";
 
 interface VoteStarsProps {
     playlistId: number;
     totalVotes: number;
+    className: string
 }
 
-function VoteStars({ playlistId, totalVotes }: VoteStarsProps) {
+function VoteStars({ playlistId, totalVotes, className }: VoteStarsProps) {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     const [voteCount, setVoteCount] = useState(totalVotes);
@@ -21,8 +21,8 @@ function VoteStars({ playlistId, totalVotes }: VoteStarsProps) {
     }
 
     return (
-        <div className="Star-rating">
-            <div className="Star-buttons">
+        <div className={className}>
+            <div>
                 {[...Array(5)].map((star, index) => {
                     index += 1;
                     return (
