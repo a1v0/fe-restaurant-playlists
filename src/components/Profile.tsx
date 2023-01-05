@@ -8,11 +8,12 @@ function Profile() {
     if (isLoading) {
         return <div>Loading ...</div>;
     }
-
+    console.log(user);
     if (user !== undefined && isAuthenticated) {
         return (
             <main className="Profile">
-                <div>
+                <h1>Account Details</h1>
+                <div className="profile-details">
                     <img src={user.picture} alt={user.name} />
                     <h2>{user.name}</h2>
                     <p>{user.email}</p>

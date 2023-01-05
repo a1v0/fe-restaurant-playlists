@@ -37,36 +37,45 @@ export default function CreatePlaylist() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="CreatePlaylist">
-            <label>
-                Playlist name
-                <input type="text" id="playlist-name"></input>
-            </label>
-            <label>
-                Description
-                <input type="text" id="playlist-description"></input>
-            </label>
-            <label>
-                location
-                <input type="text" id="playlist-location"></input>
-            </label>
-            <label>
-                cuisine
-                <input type="text" id="playlist-cuisine"></input>
-            </label>
-            <label>
-                Choose restaurants for your playlist{" "}
-                <input
-                    id="autocomplete"
-                    type="text"
-                    placeholder="type restaurant name"
-                ></input>
-                <button type="button" onClick={handleAddToPlaylist}>
-                    add restaurant
-                </button>
-                {restaurantAdded ? <p>restaurant added successfully</p> : null}
-            </label>
-            <button type="submit">Create Playlist</button>
-        </form>
+        <main className="CreatePlaylistPage">
+            <h1>Create a New Playlist</h1>
+            <form onSubmit={handleSubmit} className="CreatePlaylist">
+                <label>
+                    Playlist name
+                    <input type="text" id="playlist-name"></input>
+                </label>
+                <label>
+                    Description
+                    <input type="text" id="playlist-description"></input>
+                </label>
+                <label>
+                    Location
+                    <input type="text" id="playlist-location"></input>
+                </label>
+                <label>
+                    Cuisine
+                    <input type="text" id="playlist-cuisine"></input>
+                </label>
+                <label>
+                    Choose restaurants for your Playlist{" "}
+                    <input
+                        id="autocomplete"
+                        type="text"
+                        placeholder="type restaurant name"
+                    ></input>
+                </label>
+                {restaurantAdded ? (
+                    <p>restaurant added successfully</p>
+                ) : (
+                    <p></p>
+                )}
+                <div className="form-buttons">
+                    <button type="button" onClick={handleAddToPlaylist}>
+                        Add Restaurant
+                    </button>
+                    <button type="submit">Create Playlist</button>
+                </div>
+            </form>
+        </main>
     );
 }

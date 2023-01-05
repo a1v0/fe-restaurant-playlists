@@ -60,21 +60,13 @@ function UserPlaylists() {
                                     </p>
                                     <p>
                                         {playlist.location ? (
-                                            <Link
-                                                to={`?location=${playlist.location}`}
-                                            >
-                                                {`#${playlist.location}`}
-                                            </Link>
+                                            <div>{`#${playlist.location}`}</div>
                                         ) : null}
                                         {playlist.location && playlist.cuisine
                                             ? " "
                                             : null}
                                         {playlist.cuisine ? (
-                                            <Link
-                                                to={`?cuisine=${playlist.cuisine}`}
-                                            >
-                                                {`#${playlist.cuisine}`}
-                                            </Link>
+                                            <div>{`#${playlist.cuisine}`}</div>
                                         ) : null}
                                     </p>
                                     <div className="review-data">
@@ -96,7 +88,7 @@ function UserPlaylists() {
                                         </Link>
                                         <p>Reviews: {playlist.total_votes}</p>
                                     </div>
-                                    <div>
+                                    <div className="delete-button">
                                         {user?.name === playlist.nickname ? (
                                             <button
                                                 id="delete-playlist"
