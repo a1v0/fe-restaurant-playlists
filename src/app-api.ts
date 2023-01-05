@@ -71,3 +71,11 @@ export const getPlaylistByUser = (user_email: string) => {
 export const deletePlaylistById = (playlist_id: number) => {
     return apiConnection.delete(`/playlists/${playlist_id}`);
 };
+
+export const postVote = (playlistId: number, voteCount: number) => {
+    const body = { playlist_id: playlistId, vote_count: voteCount };
+    console.log(body);
+    return apiConnection.post(`/votes`, body).then((response) => {
+        return response.data.votes;
+    });
+};

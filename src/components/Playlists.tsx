@@ -70,9 +70,19 @@ function Playlists() {
                                         ) : null}
                                     </p>
                                     <div className="review-data">
-                                        {playlist.vote_count ? <p>Average Review {playlist.vote_count}</p>: null}
-                                        <VoteStars />
-                                        <p>Total Reviews: {playlist.total_votes}</p>
+                                        {playlist.vote_count ? (
+                                            <p>
+                                                Average Review{" "}
+                                                {playlist.vote_count}
+                                            </p>
+                                        ) : null}
+                                        <VoteStars
+                                            playlistId={playlist.playlist_id}
+                                        />
+                                        <p>
+                                            Total Reviews:{" "}
+                                            {playlist.total_votes}
+                                        </p>
                                     </div>
                                 </div>
                             </li>
