@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserPlaylists from "./UserPlaylists";
 import CreatePlaylist from "./CreatePlaylist";
 
 function Profile() {
     const { user, isAuthenticated, isLoading } = useAuth0();
+    const [rerender, setRerender] = useState(0); // every time we need to rerender, we'll modify this
+
     if (isLoading) {
         return <div>Loading ...</div>;
     }
-    console.log(user);
     if (user !== undefined && isAuthenticated) {
         return (
             <main className="Profile">
@@ -18,8 +19,8 @@ function Profile() {
                     <h2>{user.name}</h2>
                     <p>{user.email}</p>
                 </div>
-                <UserPlaylists />
-                <CreatePlaylist />
+                <UserPlaylists rerender={rerender} />
+                <CreatePlaylist rerender={rerender} setRerender={setRerender} />
             </main>
         );
     }

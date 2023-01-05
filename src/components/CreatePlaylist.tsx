@@ -3,7 +3,10 @@ import { postNewPlaylist } from "../app-api";
 import { initAutocomplete } from "../google-api";
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function CreatePlaylist() {
+export default function CreatePlaylist(props: {
+    rerender: number;
+    setRerender: any;
+}) {
     const initialState: string[] = [];
     const [restaurantsToAdd, setRestaurantsToAdd] = useState(initialState);
     const [restaurantAdded, setRestaurantAdded] = useState(false);
@@ -32,7 +35,9 @@ export default function CreatePlaylist() {
             event.target[3].value,
             user?.email!,
             restaurantsToAdd
-        );
+        ).then(() => {
+            props.setRerender(props.rerender + 1);
+        });
     };
 
     return (
