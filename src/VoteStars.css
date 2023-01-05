@@ -1,6 +1,8 @@
+.Star-rating{
+    display: flexbox;
+}
 
-
-button {
+.Star-rating .Star-buttons button {
     background-color: transparent;
     border: none;
     outline: none;
