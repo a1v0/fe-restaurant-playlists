@@ -24,10 +24,6 @@ function App() {
                     path="/playlists/:playlist_id"
                     element={<Playlist />}
                 ></Route>
-                <Route
-                    path="/user/new-playlist"
-                    element={<CreatePlaylist />}
-                ></Route>
             </Routes>
             <Footer />
         </div>

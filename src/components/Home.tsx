@@ -16,25 +16,27 @@ export default function Home() {
                     </p>
                     <p>
                         Here at Munchify, we make that simple. You can create
-                        and share "playlists" of your favourite restaurants.
+                        and share "platelists" of your favourite restaurants.
                     </p>
                 </section>
             </div>
             <div className="get-started">
                 <h2>Get Started</h2>
-                <p>
-                    <strong>I want to...</strong>
-                </p>
-                <ul>
-                    <li>
-                        <Link to="/playlists">Browse all playlists</Link>
-                    </li>
-                    <li>
-                        <AuthenticationButton /> (you can also create a new
-                        Munchify account here)
-                    </li>
-                    {/* <li>Select a random playlist</li> */}
-                </ul>
+                <div>
+                    <p>
+                        <strong>I want to...</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <Link to="/playlists">Browse all platelists</Link>
+                        </li>
+                        <li>
+                            <AuthenticationButton /> (you can also create a new
+                            Munchify account here)
+                        </li>
+                        {/* <li>Select a random platelist</li> */}
+                    </ul>
+                </div>
             </div>
             <div className="explanation">
                 <p>
@@ -44,11 +46,11 @@ export default function Home() {
                 </p>
                 <p>
                     Their other triumphs include <strong>Lunchify</strong>{" "}
-                    (playlists of midday meal recipes),{" "}
-                    <strong>Brunchify</strong> (playlists of late-morning meal
-                    recipes), <strong>Crunchify</strong> (playlists of baked or
+                    (platelists of midday meal recipes),{" "}
+                    <strong>Brunchify</strong> (platelists of late-morning meal
+                    recipes), <strong>Crunchify</strong> (platelists of baked or
                     fried goods with a crispy texture) and{" "}
-                    <strong>Hunchify</strong> (playlists of vague intuitions).
+                    <strong>Hunchify</strong> (platelists of vague intuitions).
                 </p>
             </div>
         </main>

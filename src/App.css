@@ -140,6 +140,17 @@ body {
     margin-top: 10px;
     margin-bottom: 15px;
 }
+.Home .get-started {
+    font-size: 1.4em;
+}
+.Home .get-started h2 {
+    text-align: center;
+}
+.Home .get-started > div {
+    background-color: var(--light-accent);
+    border-radius: 5px;
+    padding: 10px;
+}
 .Home .get-started ul {
     margin-left: 25px;
 }
@@ -149,32 +160,26 @@ body {
 .Home .explanation > p {
     margin-bottom: 10px;
 }
-
 .playlist-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-
 .playlist-info .review-data,
 p {
     align-self: flex-start;
     min-height: 20px;
 }
-
 .playlist-info h2 {
     align-self: flex-start;
     min-height: 90px;
 }
-
 .playlist-info a:hover {
     font-weight: bold;
 }
-
 .playlist-info .delete-button {
     padding: 8px 2px;
 }
-
 .playlist-info .delete-btn {
     background-color: var(--dark-accent);
     border: none;
@@ -183,11 +188,25 @@ p {
     font-size: 16px;
     transition-duration: 0.4s;
 }
-
 .playlist-info .delete-btn:hover,
 .delete-btn:active {
     background-color: var(--brand-color);
     font-weight: normal;
+}
+.Playlists .review-votestars button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.Playlists .review-votestars .on {
+    text-shadow: 1px 1px 2px yellow, 0 0 2em var(--brand-color), 0 0 0.2em blue;
+    color: yellow
+}
+.Playlists .review-votestars .off {
+    color: #f5f5eb;
 }
 
 .Playlists ul {
@@ -215,14 +234,7 @@ p {
     color: var(--dark-accent);
     text-decoration: none;
 }
-.Playlists ul li .review-data a {
-    text-shadow: 1px 1px 1px var(--brand-color);
-    text-decoration: none;
-    display: inline;
-}
-.Playlists ul li .review-data a:hover {
-    filter: hue-rotate(250deg);
-}
+
 .Playlists .review-data p {
     display: inline-block;
 }
@@ -331,6 +343,10 @@ p {
     font-size: 16px;
     transition-duration: 0.4s;
 }
+.CreatePlaylist button.playlist-submit {
+    background-color: var(--dark-shade);
+    text-transform: uppercase;
+}
 .CreatePlaylist button:hover {
     background-color: var(--dark-accent);
     border: none;
@@ -433,6 +449,11 @@ p {
         height: 150px;
     }
 
+    .Home .get-started > div {
+        width: 65%;
+        margin: 0 auto;
+    }
+
     .Playlist {
         max-width: 900px;
         margin: 0 auto;
@@ -474,6 +495,10 @@ p {
     }
     .Playlists ul li img {
         height: 200px;
+    }
+
+    .Home .get-started > div {
+        width: 55%;
     }
 
     .Home,

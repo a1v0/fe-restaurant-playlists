@@ -3,7 +3,10 @@ import { postNewPlaylist } from "../app-api";
 import { initAutocomplete } from "../google-api";
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function CreatePlaylist() {
+export default function CreatePlaylist(props: {
+    rerender: number;
+    setRerender: any;
+}) {
     const initialState: string[] = [];
     const [restaurantsToAdd, setRestaurantsToAdd] = useState(initialState);
     const [restaurantAdded, setRestaurantAdded] = useState(false);
@@ -25,7 +28,6 @@ export default function CreatePlaylist() {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        // *** TO DO *** add dynamic owner email to function
         postNewPlaylist(
             event.target[0].value,
             event.target[1].value,
@@ -33,35 +35,37 @@ export default function CreatePlaylist() {
             event.target[3].value,
             user?.email!,
             restaurantsToAdd
-        );
+        ).then(() => {
+            props.setRerender(props.rerender + 1);
+        });
     };
 
     return (
         <main className="CreatePlaylistPage">
-            <h1>Create a New Playlist</h1>
+            <h1>Create a New Platelist</h1>
             <form onSubmit={handleSubmit} className="CreatePlaylist">
                 <label>
-                    Playlist name
-                    <input type="text" id="playlist-name"></input>
+                    Platelist name
+                    <input type="text" id="playlist-name" placeholder="Type Platelist name"></input>
                 </label>
                 <label>
                     Description
-                    <input type="text" id="playlist-description"></input>
+                    <input type="text" id="playlist-description" placeholder="Type Platelist description"></input>
                 </label>
                 <label>
                     Location
-                    <input type="text" id="playlist-location"></input>
+                    <input type="text" id="playlist-location" placeholder="Enter Platelist location"></input>
                 </label>
                 <label>
                     Cuisine
-                    <input type="text" id="playlist-cuisine"></input>
+                    <input type="text" id="playlist-cuisine" placeholder="Type Platelist cuisine"></input>
                 </label>
                 <label>
-                    Choose restaurants for your Playlist{" "}
+                    Choose restaurants for your platelist{" "}
                     <input
                         id="autocomplete"
                         type="text"
-                        placeholder="type restaurant name"
+                        placeholder="Type restaurant name"
                     ></input>
                 </label>
                 {restaurantAdded ? (
@@ -73,7 +77,7 @@ export default function CreatePlaylist() {
                     <button type="button" onClick={handleAddToPlaylist}>
                         Add Restaurant
                     </button>
-                    <button type="submit">Create Playlist</button>
+                    <button type="submit" className="playlist-submit">Create Platelist</button>
                 </div>
             </form>
         </main>
