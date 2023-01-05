@@ -25,7 +25,6 @@ export default function CreatePlaylist() {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        // *** TO DO *** add dynamic owner email to function
         postNewPlaylist(
             event.target[0].value,
             event.target[1].value,
