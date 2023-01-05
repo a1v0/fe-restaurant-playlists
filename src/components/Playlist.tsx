@@ -120,8 +120,7 @@ function Playlist() {
                                     </a>
                                 </h3>
                                 <p>{restaurant.formatted_address}</p>
-                                {user?.nickname ===
-                                playlist[0].owner_nickname ? (
+                                {user?.name === playlist[0].owner_nickname ? (
                                     <div className="delete-restaurant-btn">
                                         <Link
                                             to=""

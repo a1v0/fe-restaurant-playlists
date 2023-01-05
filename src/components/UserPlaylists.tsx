@@ -82,21 +82,21 @@ function UserPlaylists(props: { rerender: number }) {
                                             {playlist.total_votes}
                                         </p>
                                     </div>
-                                <div className="delete-button">
-                                    {user?.name === playlist.nickname ? (
-                                        <Link
-                                            to=""
-                                            className="delete-btn"
-                                            onClick={(event) => {
-                                                handleDelete(
-                                                    playlist.playlist_id
-                                                );
-                                            }}
-                                        >
-                                            Delete
-                                        </Link>
-                                    ) : null}
-                                </div>
+                                    <div className="delete-button">
+                                        {user?.name === playlist.nickname ? (
+                                            <Link
+                                                to=""
+                                                className="delete-btn"
+                                                onClick={(event) => {
+                                                    handleDelete(
+                                                        playlist.playlist_id
+                                                    );
+                                                }}
+                                            >
+                                                Delete
+                                            </Link>
+                                        ) : null}
+                                    </div>
                                 </div>
                             </li>
                         );

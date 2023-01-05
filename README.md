@@ -2,12 +2,12 @@
 
 ## Summary
 
-||||
-|-|-|-|
-|**Deployed URL**|:|tbc|
-|**Backend API**|:|tbc|
-|**Backend repo**|:|<https://github.com/Cnmoosavinia/be-restaurant-playlists/>|
-|**Minimum Node version**|:|19.0.0|
+|                          |     |                                                            |
+| ------------------------ | --- | ---------------------------------------------------------- |
+| **Deployed URL**         | :   | tbc                                                        |
+| **Backend API**          | :   | tbc                                                        |
+| **Backend repo**         | :   | <https://github.com/Cnmoosavinia/be-restaurant-playlists/> |
+| **Minimum Node version** | :   | 19.0.0                                                     |
 
 This web app is the frontend for our Munchify website for restaurant playlists. It's a collaboration between `yos244`, `moshkh`, `Cnmoosavinia` and `a1v0`, aka YMCA.
 
@@ -41,3 +41,16 @@ const API_KEY = process.env.REACT_APP_API_KEY!;
 Before you can run the website, make sure you have your backend set up. Open the backend repo in the terminal and run `flask run`.
 
 This having been done, you can run `npm start` in a separate terminal to run the frontend.
+
+### Auth0
+
+Auth0 setup has been complete with <Auth0Provider> wrapped around <App> on the index.tsx page. To conncect with your own Auth0 account if you wish to host yourself make sure to update:
+
+domain="your domain key"
+clientId="your clientId"
+
+Both these peices of info are obtained from your Auth0 application
+
+To make use of Auth0 the user detals are stored in a React context created by Auth0 called useAuth0();
+
+With this you can acces user which is an object containing the logged in users details and isAuthenitcated with is a boolean confirming if a user is logged on or not. These are available in all components as Auth0 stores this information in the <Auth0Provider>

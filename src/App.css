@@ -160,7 +160,6 @@ body {
 .Home .explanation > p {
     margin-bottom: 10px;
 }
-
 .playlist-info {
     display: flex;
     flex-direction: column;
@@ -194,7 +193,6 @@ p {
     background-color: var(--brand-color);
     font-weight: normal;
 }
-
 .Playlists .review-votestars button {
     background-color: transparent;
     border: none;
