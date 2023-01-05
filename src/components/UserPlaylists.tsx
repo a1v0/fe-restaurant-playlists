@@ -70,23 +70,16 @@ function UserPlaylists() {
                                         ) : null}
                                     </p>
                                     <div className="review-data">
-                                        <p>{playlist.vote_count}</p>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <p>Reviews: {playlist.total_votes}</p>
+                                        {playlist.vote_count ? (
+                                            <p>
+                                                Average Review{" "}
+                                                {playlist.vote_count}
+                                            </p>
+                                        ) : null}
+                                        <p>
+                                            Total Reviews:{" "}
+                                            {playlist.total_votes}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="delete-btn">
