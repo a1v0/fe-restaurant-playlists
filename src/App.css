@@ -167,7 +167,7 @@ p {
     font-weight: bold;
 }
 
-.playlist-info button {
+/* .playlist-info button {
     background-color: var(--light-accent);
     border: none;
     color: white;
@@ -178,6 +178,29 @@ p {
 
 .playlist-info button:hover {
     background-color: var(--dark-accent);
+} */
+
+.Playlists .review-votestars button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px
+}
+
+.Playlists .review-votestars button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px
+}
+
+.Playlists .review-votestars .on {
+    color: #FAFA33;
+}
+.Playlists .review-votestars .off {
+    color: #f5f5eb;
 }
 
 .Playlists ul {
@@ -194,7 +217,6 @@ p {
 }
 .Playlists ul li:hover {
     background-color: var(--dark-shade);
-
 }
 .Playlists ul li img {
     width: 100%;
@@ -207,18 +229,11 @@ p {
     text-decoration: none;
 }
 
-.Playlists ul li .review-data a {
-    text-shadow: 1px 1px 1px var(--brand-color);
-    text-decoration: none;
-    display: inline;
-}
-.Playlists ul li .review-data a:hover {
-    filter: hue-rotate(250deg);
-}
-
 .Playlists .review-data p {
     display: inline-block;
 }
+
+
 .Playlists div.delete-btn {
     text-align: center;
     background-color: grey;
