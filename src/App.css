@@ -157,10 +157,14 @@ body {
 }
 
 .playlist-info .review-data,
-h2,
 p {
     align-self: flex-start;
     min-height: 20px;
+}
+
+.playlist-info h2 {
+    align-self: flex-start;
+    min-height: 90px;
 }
 
 .playlist-info a:hover {
