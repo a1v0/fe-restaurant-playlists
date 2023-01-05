@@ -27,7 +27,7 @@ function UserPlaylists() {
 
     return (
         <div className="Playlists">
-            <h1>My Playlists</h1>
+            <h1>My Platelists</h1>
             <ul>
                 {userPlaylists.map(
                     (playlist: {

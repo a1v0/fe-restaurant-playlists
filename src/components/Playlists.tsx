@@ -18,7 +18,7 @@ function Playlists() {
 
     return (
         <div className="Playlists">
-            <h1>Restaurant Playlists</h1>
+            <h1>Restaurant Platelists</h1>
             <ul>
                 {playlists.map(
                     (playlist: {
