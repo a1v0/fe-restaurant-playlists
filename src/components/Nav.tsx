@@ -6,7 +6,7 @@ export default function Nav() {
         <div className="Nav">
             <ul>
                 <li>
-                    <Link to="/playlists">Playlists</Link>
+                    <Link to="/playlists">Platelists</Link>
                 </li>
                 <li>
                     <Link to="">Top Locations</Link>
@@ -15,7 +15,7 @@ export default function Nav() {
                     <Link to="">Top Cuisines</Link>
                 </li>
                 <li>
-                    <Link to="">Random playlist</Link>
+                    <Link to="">Random platelist</Link>
                 </li>
             </ul>
         </div>

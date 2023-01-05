@@ -27,7 +27,7 @@ function UserPlaylists() {
 
     return (
         <div className="Playlists">
-            <h1>My Playlists</h1>
+            <h1>My Platelists</h1>
             <ul>
                 {userPlaylists.map(
                     (playlist: {
@@ -70,23 +70,16 @@ function UserPlaylists() {
                                         ) : null}
                                     </p>
                                     <div className="review-data">
-                                        <p>{playlist.vote_count}</p>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <Link className="star" to="">
-                                            ⭐
-                                        </Link>
-                                        <p>Reviews: {playlist.total_votes}</p>
+                                        {playlist.vote_count ? (
+                                            <p>
+                                                Average Review{" "}
+                                                {playlist.vote_count}
+                                            </p>
+                                        ) : null}
+                                        <p>
+                                            Total Reviews:{" "}
+                                            {playlist.total_votes}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="delete-btn">

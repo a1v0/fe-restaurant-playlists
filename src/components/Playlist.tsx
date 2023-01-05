@@ -129,7 +129,7 @@ function Playlist() {
                                                 handleDelete(restaurant);
                                             }}
                                         >
-                                            Remove from playlist
+                                            Remove from platelist
                                         </Link>
                                     </div>
                                 ) : null}
