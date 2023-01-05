@@ -73,7 +73,9 @@ export default function CreatePlaylist() {
                     <button type="button" onClick={handleAddToPlaylist}>
                         Add Restaurant
                     </button>
-                    <button type="submit">Create Playlist</button>
+                    <button type="submit" className="playlist-submit">
+                        Create Playlist
+                    </button>
                 </div>
             </form>
         </main>

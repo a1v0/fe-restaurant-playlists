@@ -194,7 +194,6 @@ p {
 }
 .Playlists ul li:hover {
     background-color: var(--dark-shade);
-
 }
 .Playlists ul li img {
     width: 100%;
@@ -328,6 +327,10 @@ p {
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.4s;
+}
+.CreatePlaylist button.playlist-submit {
+    background-color: var(--dark-shade);
+    text-transform: uppercase;
 }
 .CreatePlaylist button:hover {
     background-color: var(--dark-accent);
