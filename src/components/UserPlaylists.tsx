@@ -88,21 +88,21 @@ function UserPlaylists() {
                                         </Link>
                                         <p>Reviews: {playlist.total_votes}</p>
                                     </div>
-                                </div>
-                                <div className="delete-btn">
-                                    {user?.name === playlist.nickname ? (
-                                        <Link
-                                            to=""
-                                            className="delete-btn"
-                                            onClick={(event) => {
-                                                handleDelete(
-                                                    playlist.playlist_id
-                                                );
-                                            }}
-                                        >
-                                            Delete
-                                        </Link>
-                                    ) : null}
+                                    <div className="delete-button">
+                                        {user?.name === playlist.nickname ? (
+                                            <Link
+                                                to=""
+                                                className="delete-btn"
+                                                onClick={(event) => {
+                                                    handleDelete(
+                                                        playlist.playlist_id
+                                                    );
+                                                }}
+                                            >
+                                                Delete
+                                            </Link>
+                                        ) : null}
+                                    </div>
                                 </div>
                             </li>
                         );

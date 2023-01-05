@@ -167,17 +167,23 @@ p {
     font-weight: bold;
 }
 
-.playlist-info button {
-    background-color: var(--light-accent);
+.playlist-info .delete-button {
+    padding: 8px 2px;
+}
+
+.playlist-info .delete-btn {
+    background-color: var(--dark-accent);
     border: none;
-    color: white;
+    color: var(--light-shade);
     padding: 8px 16px;
     font-size: 16px;
     transition-duration: 0.4s;
 }
 
-.playlist-info button:hover {
-    background-color: var(--dark-accent);
+.playlist-info .delete-btn:hover,
+.delete-btn:active {
+    background-color: var(--brand-color);
+    font-weight: normal;
 }
 
 .Playlists ul {
@@ -194,7 +200,6 @@ p {
 }
 .Playlists ul li:hover {
     background-color: var(--dark-shade);
-
 }
 .Playlists ul li img {
     width: 100%;
@@ -216,13 +221,6 @@ p {
 }
 .Playlists .review-data p {
     display: inline-block;
-}
-.Playlists div.delete-btn {
-    text-align: center;
-    background-color: grey;
-}
-.Playlists ul li a.delete-btn {
-    display: block;
 }
 
 .Playlist {
