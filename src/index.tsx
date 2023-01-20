@@ -5,17 +5,16 @@ import App from "./App";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+    document.getElementById("root") as HTMLElement
 );
 root.render(
-  <BrowserRouter>
-    <Auth0Provider
-    // TO DO update domain and clientId when hosting the App
-      domain="dev-h3joz3ssdv36fqhr.eu.auth0.com"
-      clientId="GTTvFWdXYaF21kq5EgnGN0MU8zjCjD5k"
-      redirectUri={window.location.origin}
-    >
-      <App />
-    </Auth0Provider>
-  </BrowserRouter>
+    <BrowserRouter>
+        <Auth0Provider
+            domain="dev-swqpr6cgcs2vvd88.uk.auth0.com"
+            clientId="5tzaC16Sp4QqC2rvotWz9sWyNbxyJska"
+            redirectUri={window.location.origin}
+        >
+            <App />
+        </Auth0Provider>
+    </BrowserRouter>
 );
