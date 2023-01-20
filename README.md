@@ -4,8 +4,8 @@
 
 |                          |     |                                                            |
 | ------------------------ | --- | ---------------------------------------------------------- |
-| **Deployed URL**         | :   | tbc                                                        |
-| **Backend API**          | :   | tbc                                                        |
+| **Deployed URL**         | :   | <https://munchify.onrender.com/>                             |
+| **Backend API**          | :   | <https://munchify-be.onrender.com/api>                     |
 | **Backend repo**         | :   | <https://github.com/Cnmoosavinia/be-restaurant-playlists/> |
 | **Minimum Node version** | :   | 19.0.0                                                     |
 
