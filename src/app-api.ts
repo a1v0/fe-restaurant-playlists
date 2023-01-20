@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiConnection = axios.create({
-    baseURL: "http://127.0.0.1:5000/api",
+    baseURL: "https://munchify-be.onrender.com/api",
 });
 
 export const getPlaylists = (
@@ -77,7 +77,7 @@ export const postVote = (playlistId: number, voteCount: number) => {
     return apiConnection.post(`/votes`, body).then((response) => {
         return response.data.votes;
     });
-}
+};
 
 export const deleteRestaurantFromPlaylist = (
     playlist_id: number,
